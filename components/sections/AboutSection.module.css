@@ -11,10 +11,38 @@
   gap: 2rem;
 }
 
-.vision {
+.overview {
   margin-top: 1.25rem;
   color: var(--color-ink-800);
   line-height: 1.85;
+}
+
+.statementGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.statementCard {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.statementCard h3 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.statementCard p {
+  margin: 0;
+  color: var(--color-steel-500);
+  line-height: 1.75;
 }
 
 .advantages {
@@ -83,7 +111,8 @@
 
 @media (max-width: 900px) {
   .grid,
-  .valueGrid {
+  .valueGrid,
+  .statementGrid {
     grid-template-columns: 1fr;
   }
 }

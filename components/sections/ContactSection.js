@@ -9,7 +9,7 @@ export default function ContactSection({ contact }) {
       <div className={clsx("container", styles.grid)}>
         <Reveal className={styles.infoCard}>
           <span className="eyebrow">Contact Us</span>
-          <h2 className="section-title">Let’s discuss your material requirements</h2>
+          <h2 className="section-title">Let&apos;s discuss your material requirements</h2>
           <p className={styles.copy}>
             We are here to provide more information, answer questions, and support sourcing for your next project.
           </p>
@@ -43,7 +43,11 @@ export default function ContactSection({ contact }) {
             </div>
             <label>
               <span>Project Details</span>
-              <textarea name="message" placeholder="Tell us about the product, quantity, and target industry." rows="5" />
+              <textarea
+                name="message"
+                placeholder="Tell us about the product, quantity, and target industry."
+                rows="5"
+              />
             </label>
             <button type="submit">Send Inquiry</button>
           </form>

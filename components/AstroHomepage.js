@@ -1,4 +1,4 @@
-import { aboutContent, contactDetails, features, globalReach, heroContent, industries, navigation, partners, products, stats, values } from "@/data/siteContent";
+import { aboutContent, contactDetails, features, globalReach, heroContent, industries, navigation, partners, products, qualityHighlights, services, stats, values } from "@/data/siteContent";
 import SiteFooter from "@/components/layout/SiteFooter";
 import SiteHeader from "@/components/layout/SiteHeader";
 import AboutSection from "@/components/sections/AboutSection";
@@ -9,6 +9,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import IndustriesSection from "@/components/sections/IndustriesSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import ProductsSection from "@/components/sections/ProductsSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 import WhyAstroSection from "@/components/sections/WhyAstroSection";
 
 export default function AstroHomepage() {
@@ -19,9 +20,10 @@ export default function AstroHomepage() {
         <HeroSection content={heroContent} />
         <FeatureStrip items={features} />
         <AboutSection content={aboutContent} values={values} />
+        <ServicesSection services={services} />
         <ProductsSection products={products} />
         <IndustriesSection industries={industries} />
-        <WhyAstroSection stats={stats} />
+        <WhyAstroSection highlights={qualityHighlights} stats={stats} />
         <PartnersSection partners={partners} />
         <GlobalReachSection countries={globalReach} />
         <ContactSection contact={contactDetails} />

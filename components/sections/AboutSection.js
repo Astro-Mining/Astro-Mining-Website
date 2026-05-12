@@ -11,7 +11,17 @@ export default function AboutSection({ content, values }) {
           <span className="eyebrow">{content.eyebrow}</span>
           <h2 className="section-title">{content.title}</h2>
           <p className="section-copy">{content.copy}</p>
-          <p className={styles.vision}>{content.vision}</p>
+          <p className={styles.overview}>{content.overview}</p>
+          <div className={styles.statementGrid}>
+            <div className={styles.statementCard}>
+              <h3>Mission</h3>
+              <p>{content.mission}</p>
+            </div>
+            <div className={styles.statementCard}>
+              <h3>Vision</h3>
+              <p>{content.vision}</p>
+            </div>
+          </div>
           <ul className={styles.advantages}>
             {content.advantages.map((item) => (
               <li key={item}>{item}</li>

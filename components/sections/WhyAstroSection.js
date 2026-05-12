@@ -3,7 +3,7 @@ import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
 import styles from "@/components/sections/WhyAstroSection.module.css";
 
-export default function WhyAstroSection({ stats }) {
+export default function WhyAstroSection({ highlights, stats }) {
   return (
     <section className={styles.section} id="why-astro">
       <div className={clsx("container", styles.grid)}>
@@ -11,8 +11,13 @@ export default function WhyAstroSection({ stats }) {
           <span className="eyebrow">Why Astro</span>
           <h2 className="section-title">Commitment to quality and reliability</h2>
           <p className={styles.copy}>
-            We are keen to keep up with everything new, take care of the quality of materials, and deliver the required quantities within the specified deadlines.
+            Astro emphasizes laboratory-backed quality control, production precision, and dependable quantities delivered within agreed deadlines.
           </p>
+          <ul className={styles.highlightList}>
+            {highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
         </Reveal>
         <div className={styles.stats}>
           {stats.map((stat) => (

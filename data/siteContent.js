@@ -46,15 +46,38 @@ export const aboutContent = {
   eyebrow: "Who We Are",
   title: "An Egyptian hub for dependable industrial minerals",
   copy:
-    "Astro Mining and Industrial Company specializes in the exploration, treatment, and upgrading of high-quality mining ores including feldspar, kaolin, silica sand, iron oxides, calcium carbonate, dolomite, and gypsum.",
+    "Astro Mining and Industrial is a dynamic Egyptian mining company dedicated to the exploration, treatment, upgrading, and supply of high-quality mining ores including feldspar, kaolin, glass sand, iron oxide, calcium carbonate, dolomite, and gypsum.",
+  overview:
+    "Extracting treasures from the earth is more than a slogan for Astro. It reflects the company focus on turning Egypt's mineral resources into dependable industrial materials that support modern manufacturing and construction sectors.",
+  mission:
+    "Our mission is to harness the rich mineral resources of Egypt while adhering to the highest standards of environmental responsibility, sustainability, and product quality.",
   vision:
-    "Our vision is to be one of the leading names in the industry and to provide local and international markets with Egyptian ores that meet the required specifications and quality levels for different industries.",
+    "Our vision is to be one of the leading names in the industry and to establish a reliable Egyptian multi-minerals hub serving both local and international markets with the required specifications and quality levels.",
   advantages: [
     "Reliable multi-minerals platform serving domestic and export markets",
     "Multiple efficient production lines built for consistent throughput",
     "Customer-first coordination, flexibility, and commitment to deadlines"
   ]
 };
+
+export const services = [
+  {
+    title: "Exploration",
+    copy: "Comprehensive geological surveys and assessments to identify and evaluate mineral deposits."
+  },
+  {
+    title: "Treatment",
+    copy: "State-of-the-art processing techniques to treat and refine minerals while ensuring high purity."
+  },
+  {
+    title: "Upgrading",
+    copy: "Advanced methods that enhance raw materials and make them suitable for varied industrial applications."
+  },
+  {
+    title: "Supply Raw Materials",
+    copy: "Consistent supply of high-quality materials from mines and quarries backed by efficient German technology lines."
+  }
+];
 
 export const products = [
   {
@@ -140,27 +163,27 @@ export const industries = [
 
 export const values = [
   {
-    title: "Continuous Development",
+    title: "Quality",
     copy:
-      "The organization keeps pace with market needs and customer expectations through steady development.",
+      "We prioritize the production and supply of high-quality minerals that meet stringent industry standards.",
     icon: "growth"
   },
   {
-    title: "Professionalism & Commitment",
+    title: "Integrity",
     copy:
-      "The management team works collaboratively and puts the interests of the organization and customers first.",
+      "We conduct business with transparency and uphold ethical practices across every part of our operations.",
     icon: "shield"
   },
   {
-    title: "Flexibility",
+    title: "Innovation",
     copy:
-      "Astro adapts to different customer needs with high flexibility and positive operational planning.",
+      "We embrace technological advancement to improve exploration, processing, and product consistency.",
     icon: "layers"
   },
   {
-    title: "Collaborations",
+    title: "Collaboration",
     copy:
-      "Professional dealing, respect for time, and commitment to agreements down to the smallest details.",
+      "We build strong partnerships with clients, stakeholders, and communities to drive mutual success.",
     icon: "handshake"
   }
 ];
@@ -170,6 +193,12 @@ export const stats = [
   { label: "Countries Served", value: "20+", icon: "globe" },
   { label: "In-House Quality Control", value: "100%", icon: "flask" },
   { label: "On-Time Delivery Focus", value: "Always", icon: "clock" }
+];
+
+export const qualityHighlights = [
+  "Rigorous laboratory quality control is carried out at strategic stages of each operation.",
+  "The quality system is designed to detect errors early and protect the performance of every batch.",
+  "Astro combines high-quality raw materials with multiple efficient production lines using German technology."
 ];
 
 export const partners = [
@@ -194,8 +223,8 @@ export const globalReach = [
 ];
 
 export const contactDetails = {
-  address: "42 - El Bahr Street, Sheraton, beside Radisson hotel",
-  phones: ["01080040344", "01080040388"],
+  address: "71 Abdul Hamid Badawy, Sheraton, beside Radisson hotel",
+  phones: ["0222667748", "0222667726", "01080040344", "01080040388"],
   email: "info@astromining-industrial.com",
   social: {
     youtube: "https://youtube.com/@astromining?si=Ta8bSus8zdPZ7n_2",
