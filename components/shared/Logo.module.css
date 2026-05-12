@@ -1,0 +1,42 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.text {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.text strong {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 2rem;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.text span {
+  color: var(--color-orange-600);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.inverted .text strong {
+  color: var(--color-white);
+}
+
+.inverted .text span {
+  color: #ffb37f;
+}

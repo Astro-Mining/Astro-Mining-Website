@@ -1,0 +1,41 @@
+.section {
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff 0%, #f7f2ea 100%);
+}
+
+.marquee {
+  overflow: hidden;
+  margin-top: 2rem;
+  padding: 0 0 1rem;
+}
+
+.track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: scroll 24s linear infinite;
+}
+
+.logoChip {
+  min-width: 13rem;
+  padding: 1rem 1.35rem;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 999px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

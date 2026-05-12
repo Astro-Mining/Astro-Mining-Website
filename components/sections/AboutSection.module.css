@@ -1,0 +1,89 @@
+.section {
+  position: relative;
+  background:
+    radial-gradient(circle at top right, rgba(229, 109, 31, 0.08), transparent 20%),
+    linear-gradient(180deg, #fff 0%, #fbfaf8 100%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 2rem;
+}
+
+.vision {
+  margin-top: 1.25rem;
+  color: var(--color-ink-800);
+  line-height: 1.85;
+}
+
+.advantages {
+  display: grid;
+  gap: 0.9rem;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  list-style: none;
+}
+
+.advantages li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--color-ink-800);
+}
+
+.advantages li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--color-orange-600);
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.valueCard {
+  padding: 1.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 242, 234, 0.7));
+  box-shadow: var(--shadow-card);
+}
+
+.valueIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  color: var(--color-orange-600);
+  background: rgba(229, 109, 31, 0.12);
+}
+
+.valueCard h3 {
+  margin: 1rem 0 0.65rem;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.valueCard p {
+  margin: 0;
+  color: var(--color-steel-500);
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .grid,
+  .valueGrid {
+    grid-template-columns: 1fr;
+  }
+}
