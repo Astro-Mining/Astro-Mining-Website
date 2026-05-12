@@ -7,7 +7,6 @@ export default function PartnersSection({ partners }) {
     <section className={styles.section} id="partners">
       <div className="container">
         <span className="eyebrow">Our Partners</span>
-        <h2 className="section-title">Trusted by established industrial buyers</h2>
       </div>
       <div className={styles.marquee}>
         <div className={styles.track}>

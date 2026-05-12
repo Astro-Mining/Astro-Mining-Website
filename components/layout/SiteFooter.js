@@ -5,20 +5,26 @@ import styles from "@/components/layout/SiteFooter.module.css";
 
 export default function SiteFooter({ navigation, contact }) {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="contact">
       <div className={clsx("container", styles.grid)}>
         <div className={styles.brandBlock}>
-          <Logo inverted />
+          <Logo inverted size="large" />
           <p>
-            Extracting treasures from the earth and providing high-quality industrial minerals for local and global industries.
+            Extracting treasures from the earth and providing high-quality minerals for a better tomorrow.
           </p>
           <div className={styles.socials}>
-            <a href={contact.social.youtube} rel="noreferrer" target="_blank">YouTube</a>
-            <a href={contact.social.linkedin} rel="noreferrer" target="_blank">LinkedIn</a>
-            <a href={contact.social.facebook} rel="noreferrer" target="_blank">Facebook</a>
+            <a href={contact.social.linkedin} rel="noreferrer" target="_blank" aria-label="LinkedIn">
+              <Icon name="linkedin" size={18} />
+            </a>
+            <a href={contact.social.facebook} rel="noreferrer" target="_blank" aria-label="Facebook">
+              <Icon name="facebook" size={18} />
+            </a>
+            <a href={contact.social.instagram} rel="noreferrer" target="_blank" aria-label="Instagram">
+              <Icon name="instagram" size={18} />
+            </a>
           </div>
         </div>
-        <div>
+        <div className={styles.column}>
           <h3>Quick Links</h3>
           <div className={styles.linkList}>
             {navigation.map((item) => (
@@ -28,17 +34,33 @@ export default function SiteFooter({ navigation, contact }) {
             ))}
           </div>
         </div>
-        <div>
+        <div className={styles.column}>
           <h3>Contact Info</h3>
           <div className={styles.infoList}>
             <p><Icon name="mapPin" size={18} /> {contact.address}</p>
-            <p><Icon name="phone" size={18} /> {contact.phones.join(" / ")}</p>
+            <p><Icon name="phone" size={18} /> {contact.phones[0]}</p>
             <p><Icon name="mail" size={18} /> {contact.email}</p>
           </div>
         </div>
+        <div className={styles.column}>
+          <h3>Download</h3>
+          <a
+            className={styles.downloadCard}
+            href="/assets/docs/astro-company-profile.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>
+              Company Profile
+              <br />
+              (PDF)
+            </span>
+            <Icon name="download" className={styles.downloadIcon} size={20} />
+          </a>
+        </div>
       </div>
       <div className={styles.bottomBar}>
-        <div className="container">Copyright 2026 Astro Mining & Industrial. All rights reserved.</div>
+        <div className="container">© 2024 Astromining and Industrial. All Rights Reserved.</div>
       </div>
     </footer>
   );

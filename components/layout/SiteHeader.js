@@ -13,7 +13,7 @@ export default function SiteHeader({ navigation }) {
   return (
     <header className={styles.header}>
       <div className={clsx("container", styles.inner)}>
-        <Logo />
+        <Logo size="large" />
         <nav className={styles.desktopNav} aria-label="Primary navigation">
           {navigation.map((item, index) => (
             <a

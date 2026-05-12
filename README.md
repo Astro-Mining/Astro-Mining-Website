@@ -1,6 +1,6 @@
 # Astro Mining & Industrial Website
 
-Next.js rebuild of the Astro Mining & Industrial homepage using the supplied preview, local brand assets, and content sourced from the live website.
+Next.js rebuild of the Astro Mining & Industrial homepage using the supplied preview, local brand assets, the company PDF, and content sourced from the live website.
 
 ## Stack
 
@@ -15,6 +15,7 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Reusable layout and shared UI components
 - SEO-ready metadata and semantic structure
 - Real local logo and hero video integration
+- Company profile PDF wired into the footer download card
 - Scroll-based fade-up animations across sections
 - Refactored `astro_homepage_preview.jsx` into a compatibility export
 
@@ -24,24 +25,24 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - `components/` layout, sections, and shared UI primitives
 - `data/` site content and structured homepage data
 - `lib/` animation variants and shared helpers
-- `public/assets/` brand, image, and video assets
+- `public/assets/` brand, image, video, and PDF assets
 
 ## Implemented Sections
 
-- Sticky header with responsive mobile navigation
+- Absolute header with responsive mobile navigation
 - Hero section with local looping background video
 - Feature strip
-- About and values section
-- Products grid
-- Industries grid
-- Why Astro stats section
+- Products grid matching the preview layout
+- Industries grid matching the preview layout
+- Why Astro stats section matching the preview layout
 - Partners marquee
-- Global reach section
-- Contact section
+- Global reach map section with interactive export pins
+- Footer with contact info, social links, and profile download
 
 ## Notes
 
 - The original single-file preview is preserved as a compatibility export and now points to the modular homepage implementation.
+- The page structure intentionally follows the supplied preview file layout instead of expanding into extra homepage sections.
 - Styling avoids Tailwind and Bootstrap per project rules.
 - Animations focus on subtle fade-up and staggered reveal patterns.
 

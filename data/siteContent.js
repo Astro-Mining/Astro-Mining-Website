@@ -5,7 +5,7 @@ export const navigation = [
   { label: "Industries", href: "#industries" },
   { label: "Why Astro", href: "#why-astro" },
   { label: "Partners", href: "#partners" },
-  { label: "Contact", href: "#contact" }
+  { label: "Contact Us", href: "#contact" }
 ];
 
 export const heroContent = {
@@ -146,6 +146,17 @@ export const products = [
   }
 ];
 
+export const previewIndustries = [
+  { name: "Glass & Ceramics", icon: "flask" },
+  { name: "Construction & Concrete", icon: "building" },
+  { name: "Paints & Coatings", icon: "brush" },
+  { name: "Plastics & Rubber", icon: "flask" },
+  { name: "Oil & Gas", icon: "flask" },
+  { name: "Agriculture", icon: "sprout" },
+  { name: "Chemicals", icon: "flask" },
+  { name: "Paper & Packaging", icon: "file" }
+];
+
 export const industries = [
   "Contracting and drilling",
   "Refractories and ceramics industry",
@@ -222,13 +233,25 @@ export const globalReach = [
   "Algeria"
 ];
 
+export const mapPins = [
+  { country: "Gulf countries", project: "GCC Silica Supply", x: 57, y: 52, tone: "linear-gradient(135deg,#fed7aa,#ea580c)" },
+  { country: "South Africa", project: "Ceramics Grade Minerals", x: 53, y: 79, tone: "linear-gradient(135deg,#e2e8f0,#64748b)" },
+  { country: "India", project: "Feldspar Export Hub", x: 67, y: 56, tone: "linear-gradient(135deg,#fde68a,#f97316)" },
+  { country: "Bangladesh", project: "Kaolin Processing Route", x: 71, y: 58, tone: "linear-gradient(135deg,#e7e5e4,#78716c)" },
+  { country: "Libya", project: "Industrial Sand Route", x: 49, y: 48, tone: "linear-gradient(135deg,#ffedd5,#f97316)" },
+  { country: "Turkey", project: "Dolomite Distribution", x: 53, y: 40, tone: "linear-gradient(135deg,#e5e7eb,#64748b)" },
+  { country: "Morocco", project: "North Africa Minerals", x: 43, y: 46, tone: "linear-gradient(135deg,#fef3c7,#fb923c)" },
+  { country: "Tunisia", project: "Carbonate Export Line", x: 47, y: 43, tone: "linear-gradient(135deg,#f4f4f5,#71717a)" },
+  { country: "Algeria", project: "Bulk Minerals Channel", x: 45, y: 47, tone: "linear-gradient(135deg,#fed7aa,#dc2626)" }
+];
+
 export const contactDetails = {
-  address: "71 Abdul Hamid Badawy, Sheraton, beside Radisson hotel",
-  phones: ["0222667748", "0222667726", "01080040344", "01080040388"],
+  address: "71 Abdul Hamid Badawy St., Nozha, Nasr City, Cairo, Egypt",
+  phones: ["+20 101 115 2217", "0222667748", "0222667726", "01080040344", "01080040388"],
   email: "info@astromining-industrial.com",
   social: {
-    youtube: "https://youtube.com/@astromining?si=Ta8bSus8zdPZ7n_2",
     linkedin: "https://www.linkedin.com/company/astro-mining-and-industrial-company",
-    facebook: "https://www.facebook.com/share/1AXm2QHTaz/"
+    facebook: "https://www.facebook.com/share/1AXm2QHTaz/",
+    instagram: "https://www.instagram.com/"
   }
 };

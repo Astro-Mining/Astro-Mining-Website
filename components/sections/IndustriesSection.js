@@ -1,21 +1,26 @@
+import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
 import styles from "@/components/sections/IndustriesSection.module.css";
 
 export default function IndustriesSection({ industries }) {
   return (
     <section className={styles.section} id="industries">
-      <div className="container">
-        <Reveal>
-          <span className="eyebrow">Industries We Serve</span>
-          <h2 className="section-title">Products that move across many sectors</h2>
+      <div className={styles.wrap}>
+        <Reveal className={styles.frame}>
+          <h3 className={styles.title}>Industries We Serve</h3>
+          <div className={styles.grid}>
+            {industries.map((industry) => (
+              <div key={industry.name} className={styles.card}>
+                <Icon className={styles.icon} name={industry.icon} size={24} />
+                <span>{industry.name}</span>
+              </div>
+            ))}
+            <a className={styles.moreCard} href="#contact">
+              <Icon name="plus" size={22} />
+              <span>View All Industries</span>
+            </a>
+          </div>
         </Reveal>
-        <div className={styles.grid}>
-          {industries.map((industry) => (
-            <Reveal key={industry} className={styles.card}>
-              <span>{industry}</span>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );

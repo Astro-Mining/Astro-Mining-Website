@@ -22,16 +22,15 @@ export default function ProductsSection({ products }) {
               </div>
               <div className={styles.body}>
                 <h3>{product.name}</h3>
-                <p>{product.uses}</p>
-                <ul>
-                  {product.specs.map((spec) => (
-                    <li key={spec}>{spec}</li>
-                  ))}
-                </ul>
-                <strong>{product.capacity}</strong>
+                <div className={styles.rule} />
+                <p>{product.capacity}</p>
+                <a className={styles.link} href="#contact">View Details</a>
               </div>
             </Reveal>
           ))}
+        </div>
+        <div className={styles.actions}>
+          <a className={styles.allButton} href="#contact">View All Products</a>
         </div>
       </div>
     </section>
