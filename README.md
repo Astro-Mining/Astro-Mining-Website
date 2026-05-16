@@ -17,7 +17,7 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Real local logo and hero video integration
 - Generated mineral product imagery placed in reusable local assets
 - Client-provided quarry imagery integrated into About and Services sections
-- Client-provided partner logos integrated into a manually controllable partner slider
+- Client-provided partner logos integrated into an infinite draggable partner loop
 - Company profile PDF wired into the footer download card
 - Scroll-based fade-up animations across sections
 - Refactored `astro_homepage_preview.jsx` into a compatibility export
@@ -40,7 +40,7 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Products grid matching the preview layout
 - Industries grid matching the preview layout
 - Why Astro stats section matching the preview layout
-- Partners slider with play/pause and manual navigation controls
+- Partners slider with hover-pause and manual drag interaction
 - Global reach map section with coordinate-based export pins and flag previews
 - Footer with contact info, social links, and profile download
 

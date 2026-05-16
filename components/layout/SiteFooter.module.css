@@ -17,9 +17,10 @@
   line-height: 1.8;
 }
 
-.brandBlock :global(.logo) {
-  transform: scale(1.2);
-  transform-origin: left center;
+.footerLogo {
+  width: auto;
+  height: auto;
+  max-width: clamp(5.6rem, 9vw, 7rem);
 }
 
 .footer h3 {

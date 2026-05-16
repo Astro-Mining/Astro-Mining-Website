@@ -16,7 +16,19 @@
   gap: 1rem;
   width: max-content;
   padding: 0.35rem 0 1rem;
-  animation: partnerLoop 24s linear infinite;
+  overflow-x: auto;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.dragging {
+  cursor: grabbing;
 }
 
 .partnerCard {
@@ -48,19 +60,5 @@
 @media (max-width: 640px) {
   .partnerCard {
     flex-basis: 15rem;
-  }
-}
-
-.railWrap:hover .rail {
-  animation-play-state: paused;
-}
-
-@keyframes partnerLoop {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(calc(-50% - 0.5rem));
   }
 }

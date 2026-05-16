@@ -1,5 +1,5 @@
+import Image from "next/image";
 import clsx from "clsx";
-import Logo from "@/components/shared/Logo";
 import Icon from "@/components/shared/Icon";
 import styles from "@/components/layout/SiteFooter.module.css";
 
@@ -8,18 +8,24 @@ export default function SiteFooter({ navigation, contact }) {
     <footer className={styles.footer} id="contact">
       <div className={clsx("container", styles.grid)}>
         <div className={styles.brandBlock}>
-          <Logo size="large" />
+          <Image
+            alt="Astro Mining and Industrial logo"
+            className={styles.footerLogo}
+            height={118}
+            src="/assets/brand/astro-footer-logo.png"
+            width={104}
+          />
           <p>
             Extracting treasures from the earth and providing high-quality minerals for local and international industrial demand.
           </p>
           <div className={styles.socials}>
-            <a href={contact.social.linkedin} rel="noreferrer" target="_blank" aria-label="LinkedIn">
+            <a aria-label="LinkedIn" href={contact.social.linkedin} rel="noreferrer" target="_blank">
               <Icon name="linkedin" size={18} />
             </a>
-            <a href={contact.social.facebook} rel="noreferrer" target="_blank" aria-label="Facebook">
+            <a aria-label="Facebook" href={contact.social.facebook} rel="noreferrer" target="_blank">
               <Icon name="facebook" size={18} />
             </a>
-            <a href={contact.social.instagram} rel="noreferrer" target="_blank" aria-label="Instagram">
+            <a aria-label="Instagram" href={contact.social.instagram} rel="noreferrer" target="_blank">
               <Icon name="instagram" size={18} />
             </a>
           </div>
@@ -28,7 +34,7 @@ export default function SiteFooter({ navigation, contact }) {
           <h3>Quick Links</h3>
           <div className={styles.linkList}>
             {navigation.map((item) => (
-              <a key={item.label} href={item.href}>
+              <a href={item.href} key={item.label}>
                 {item.label}
               </a>
             ))}
@@ -56,20 +62,20 @@ export default function SiteFooter({ navigation, contact }) {
           <a
             className={styles.downloadCard}
             href="/assets/docs/astro-company-profile.pdf"
-            target="_blank"
             rel="noreferrer"
+            target="_blank"
           >
             <span>
               Company Profile
               <br />
               (PDF)
             </span>
-            <Icon name="download" className={styles.downloadIcon} size={20} />
+            <Icon className={styles.downloadIcon} name="download" size={20} />
           </a>
         </div>
       </div>
       <div className={styles.bottomBar}>
-        <div className="container">© 2024 Astro Mining and Industrial. All Rights Reserved.</div>
+        <div className="container">&copy; 2024 Astro Mining and Industrial. All Rights Reserved.</div>
       </div>
     </footer>
   );

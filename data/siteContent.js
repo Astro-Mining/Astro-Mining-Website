@@ -357,7 +357,8 @@ export const mapPins = [
 
 export const contactDetails = {
   address: "71 Abdel Hamid Badawi, Sheraton, Heliopolis, Cairo, Egypt",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=71+Abdel+Hamid+Badawi+Sheraton+Heliopolis+Cairo+Egypt",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Astro+Mining+and+Industrial,+71+Abdel+Hamid+Badawi,+Sheraton,+Heliopolis,+Cairo,+Egypt",
   telephones: ["0222667748", "0222667726", "01080040344"],
   whatsapp: "+20 108 004 0388",
   whatsappUrl: "https://wa.me/201080040388",
