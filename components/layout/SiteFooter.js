@@ -8,9 +8,7 @@ export default function SiteFooter({ navigation, contact }) {
     <footer className={styles.footer} id="contact">
       <div className={clsx("container", styles.grid)}>
         <div className={styles.brandBlock}>
-          <div className={styles.logoPlate}>
-            <Logo size="large" />
-          </div>
+          <Logo size="large" />
           <p>
             Extracting treasures from the earth and providing high-quality minerals for local and international industrial demand.
           </p>
@@ -39,12 +37,18 @@ export default function SiteFooter({ navigation, contact }) {
         <div className={styles.column}>
           <h3>Contact Info</h3>
           <div className={styles.infoList}>
-            <p><Icon name="mapPin" size={18} /> {contact.address}</p>
+            <a className={styles.infoLink} href={contact.mapsUrl} rel="noreferrer" target="_blank">
+              <Icon name="mapPin" size={18} /> {contact.address}
+            </a>
             <p><Icon name="phone" size={18} /> Tel: {contact.telephones.join(" / ")}</p>
-            <p><Icon name="phone" size={18} /> WhatsApp: {contact.whatsapp}</p>
+            <a className={styles.infoLink} href={contact.whatsappUrl} rel="noreferrer" target="_blank">
+              <Icon name="phone" size={18} /> WhatsApp: {contact.whatsapp}
+            </a>
             <p><Icon name="mail" size={18} /> {contact.emails[0]}</p>
             <p><Icon name="mail" size={18} /> {contact.emails[1]}</p>
-            <p><Icon name="globe" size={18} /> {contact.website}</p>
+            <a className={styles.infoLink} href={`https://${contact.website}`} rel="noreferrer" target="_blank">
+              <Icon name="globe" size={18} /> {contact.website}
+            </a>
           </div>
         </div>
         <div className={styles.column}>

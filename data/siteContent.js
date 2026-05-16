@@ -116,8 +116,8 @@ export const servicesContent = {
   copy:
     "Astro supports clients across the full mineral value chain with practical field experience, treatment precision, and dependable raw material supply.",
   visual: {
-    src: "/assets/images/company/quarry-loader.png",
-    alt: "Astro loader working with white mineral stone blocks"
+    src: "/assets/images/company/partnership-handshake.jpeg",
+    alt: "Astro partnership and industrial supply handshake"
   }
 };
 
@@ -357,8 +357,10 @@ export const mapPins = [
 
 export const contactDetails = {
   address: "71 Abdel Hamid Badawi, Sheraton, Heliopolis, Cairo, Egypt",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=71+Abdel+Hamid+Badawi+Sheraton+Heliopolis+Cairo+Egypt",
   telephones: ["0222667748", "0222667726", "01080040344"],
-  whatsapp: "01080040388",
+  whatsapp: "+20 108 004 0388",
+  whatsappUrl: "https://wa.me/201080040388",
   emails: ["info@astromining-industrial.com", "sales@astromining-industrial.com"],
   website: "www.astromining-industrial.com",
   social: {

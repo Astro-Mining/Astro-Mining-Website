@@ -103,6 +103,15 @@
 
 .image {
   object-fit: cover;
+  transform: scale(1.04);
+}
+
+.primaryVisual .image {
+  animation: driftPrimary 16s ease-in-out infinite alternate;
+}
+
+.secondaryVisual .image {
+  animation: driftSecondary 14s ease-in-out infinite alternate;
 }
 
 .factPanel {
@@ -147,5 +156,25 @@
 
   .secondaryVisual {
     min-height: 18rem;
+  }
+}
+
+@keyframes driftPrimary {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.1) translate3d(-1.2%, -1%, 0);
+  }
+}
+
+@keyframes driftSecondary {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.08) translate3d(1.5%, -1%, 0);
   }
 }

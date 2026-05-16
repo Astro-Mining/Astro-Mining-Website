@@ -14,9 +14,13 @@ export default function ContactSection({ contact }) {
             We are here to provide more information, answer questions, and support sourcing for your next project.
           </p>
           <div className={styles.infoList}>
-            <p><Icon name="mapPin" size={18} /> {contact.address}</p>
+            <a className={styles.infoLink} href={contact.mapsUrl} rel="noreferrer" target="_blank">
+              <Icon name="mapPin" size={18} /> {contact.address}
+            </a>
             <p><Icon name="phone" size={18} /> {contact.telephones.join(" / ")}</p>
-            <p><Icon name="phone" size={18} /> WhatsApp: {contact.whatsapp}</p>
+            <a className={styles.infoLink} href={contact.whatsappUrl} rel="noreferrer" target="_blank">
+              <Icon name="phone" size={18} /> WhatsApp: {contact.whatsapp}
+            </a>
             <p><Icon name="mail" size={18} /> {contact.emails.join(" / ")}</p>
           </div>
         </Reveal>

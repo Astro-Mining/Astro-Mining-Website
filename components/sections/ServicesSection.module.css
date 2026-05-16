@@ -60,6 +60,8 @@
 
 .image {
   object-fit: cover;
+  transform: scale(1.05);
+  animation: driftService 18s ease-in-out infinite alternate;
 }
 
 .overlayCard {
@@ -101,5 +103,15 @@
 
   .visual {
     min-height: 26rem;
+  }
+}
+
+@keyframes driftService {
+  from {
+    transform: scale(1.05) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.11) translate3d(-1.4%, -1.2%, 0);
   }
 }
