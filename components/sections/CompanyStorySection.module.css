@@ -2,7 +2,7 @@
   background:
     radial-gradient(circle at top right, rgba(229, 109, 31, 0.1), transparent 22%),
     linear-gradient(180deg, #fff 0%, #f7f9fc 100%);
-  padding: 5rem 0 5.25rem;
+  padding: 0 0 5.25rem;
 }
 
 .shell {
