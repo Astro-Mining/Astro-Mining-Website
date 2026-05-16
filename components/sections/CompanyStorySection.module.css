@@ -24,12 +24,15 @@
 
 .copyOuter {
   display: grid;
+  padding-left: max(0.75rem, calc((100vw - var(--container)) / 2));
+  padding-right: 2rem;
 }
 
 .copyColumn {
   display: grid;
   align-content: start;
-  padding: 1rem 2rem 1.5rem 0;
+  width: min(100%, 38rem);
+  padding: 1rem 0 1.5rem;
 }
 
 .heading {

@@ -70,7 +70,7 @@ export default function CompanyStorySection({ content }) {
       <div className={styles.shell}>
         <div className={styles.stickyStage}>
           <div className={styles.copyOuter}>
-            <div className={clsx("container", styles.copyColumn)}>
+            <div className={styles.copyColumn}>
               <span className="eyebrow">{content.eyebrow}</span>
               <h2 className={clsx("section-title", styles.heading)}>{content.title}</h2>
               <p className="section-copy">{content.copy}</p>

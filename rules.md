@@ -30,3 +30,4 @@
 
 - Maintain `README.md` as the project evolves.
 - Document architecture, setup, and major implementation decisions.
+- After any completed code change, commit and push the update.
