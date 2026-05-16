@@ -1,15 +1,17 @@
-import { Manrope, Oswald } from "next/font/google";
+import { Barlow, Bebas_Neue } from "next/font/google";
 import "@/app/globals.css";
 
-const bodyFont = Manrope({
+const bodyFont = Barlow({
   subsets: ["latin"],
   variable: "--font-body",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap"
 });
 
-const headingFont = Oswald({
+const headingFont = Bebas_Neue({
   subsets: ["latin"],
   variable: "--font-heading",
+  weight: "400",
   display: "swap"
 });
 

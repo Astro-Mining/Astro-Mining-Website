@@ -15,10 +15,10 @@ export default function Logo({ inverted = false, size = "default" }) {
       <div className={styles.mark}>
         <Image
           alt="Astro Mining & Industrial logo"
-          height={size === "large" ? 110 : 86}
+          height={size === "large" ? 132 : 92}
           priority
           src="/assets/brand/astro-logo.png"
-          width={size === "large" ? 96 : 74}
+          width={size === "large" ? 118 : 82}
         />
       </div>
     </a>

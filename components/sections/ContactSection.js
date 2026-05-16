@@ -15,8 +15,9 @@ export default function ContactSection({ contact }) {
           </p>
           <div className={styles.infoList}>
             <p><Icon name="mapPin" size={18} /> {contact.address}</p>
-            <p><Icon name="phone" size={18} /> {contact.phones.join(" / ")}</p>
-            <p><Icon name="mail" size={18} /> {contact.email}</p>
+            <p><Icon name="phone" size={18} /> {contact.telephones.join(" / ")}</p>
+            <p><Icon name="phone" size={18} /> WhatsApp: {contact.whatsapp}</p>
+            <p><Icon name="mail" size={18} /> {contact.emails.join(" / ")}</p>
           </div>
         </Reveal>
         <Reveal className={styles.formCard}>

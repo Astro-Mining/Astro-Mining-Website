@@ -98,6 +98,12 @@ const icons = {
       <path d="m10 8 6 4-6 4Z" fill="currentColor" stroke="none" />
     </>
   ),
+  pause: (
+    <>
+      <path d="M8 5v14" />
+      <path d="M16 5v14" />
+    </>
+  ),
   menu: (
     <>
       <path d="M4 7h16" />

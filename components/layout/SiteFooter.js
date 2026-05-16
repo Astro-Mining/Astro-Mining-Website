@@ -8,9 +8,11 @@ export default function SiteFooter({ navigation, contact }) {
     <footer className={styles.footer} id="contact">
       <div className={clsx("container", styles.grid)}>
         <div className={styles.brandBlock}>
-          <Logo inverted size="large" />
+          <div className={styles.logoPlate}>
+            <Logo size="large" />
+          </div>
           <p>
-            Extracting treasures from the earth and providing high-quality minerals for a better tomorrow.
+            Extracting treasures from the earth and providing high-quality minerals for local and international industrial demand.
           </p>
           <div className={styles.socials}>
             <a href={contact.social.linkedin} rel="noreferrer" target="_blank" aria-label="LinkedIn">
@@ -38,8 +40,11 @@ export default function SiteFooter({ navigation, contact }) {
           <h3>Contact Info</h3>
           <div className={styles.infoList}>
             <p><Icon name="mapPin" size={18} /> {contact.address}</p>
-            <p><Icon name="phone" size={18} /> {contact.phones[0]}</p>
-            <p><Icon name="mail" size={18} /> {contact.email}</p>
+            <p><Icon name="phone" size={18} /> Tel: {contact.telephones.join(" / ")}</p>
+            <p><Icon name="phone" size={18} /> WhatsApp: {contact.whatsapp}</p>
+            <p><Icon name="mail" size={18} /> {contact.emails[0]}</p>
+            <p><Icon name="mail" size={18} /> {contact.emails[1]}</p>
+            <p><Icon name="globe" size={18} /> {contact.website}</p>
           </div>
         </div>
         <div className={styles.column}>
@@ -60,7 +65,7 @@ export default function SiteFooter({ navigation, contact }) {
         </div>
       </div>
       <div className={styles.bottomBar}>
-        <div className="container">© 2024 Astromining and Industrial. All Rights Reserved.</div>
+        <div className="container">© 2024 Astro Mining and Industrial. All Rights Reserved.</div>
       </div>
     </footer>
   );

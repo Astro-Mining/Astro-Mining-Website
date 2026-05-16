@@ -1,19 +1,18 @@
 .section {
-  background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
-}
-
-.heading {
-  text-align: center;
-}
-
-.heading :global(.section-copy) {
-  margin-left: auto;
-  margin-right: auto;
+  background: linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%);
+  padding: 4.75rem 0 5rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -21,13 +20,24 @@
 .card {
   padding: 1.5rem;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-white);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-card);
 }
 
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.95rem;
+  color: var(--color-orange-600);
+  background: rgba(229, 109, 31, 0.12);
+}
+
 .card h3 {
-  margin: 0 0 0.75rem;
+  margin: 1rem 0 0.7rem;
   font-family: var(--font-heading), sans-serif;
   font-size: 1.08rem;
   letter-spacing: 0.06em;
@@ -40,14 +50,56 @@
   line-height: 1.8;
 }
 
-@media (max-width: 980px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.visual {
+  position: relative;
+  min-height: 36rem;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  box-shadow: var(--shadow-soft);
 }
 
-@media (max-width: 640px) {
-  .grid {
+.image {
+  object-fit: cover;
+}
+
+.overlayCard {
+  position: absolute;
+  left: 1.35rem;
+  right: 1.35rem;
+  bottom: 1.35rem;
+  display: grid;
+  gap: 0.45rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.25rem;
+  color: var(--color-white);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.72));
+  backdrop-filter: blur(10px);
+}
+
+.overlayCard span {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.overlayCard strong {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .grid,
+  .cards {
     grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: 26rem;
   }
 }

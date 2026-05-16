@@ -43,41 +43,83 @@ export const features = [
 ];
 
 export const aboutContent = {
-  eyebrow: "Who We Are",
-  title: "An Egyptian hub for dependable industrial minerals",
+  eyebrow: "About Us",
+  title: "Egyptian mining expertise built around quality minerals",
   copy:
-    "Astro Mining and Industrial is a dynamic Egyptian mining company dedicated to the exploration, treatment, upgrading, and supply of high-quality mining ores including feldspar, kaolin, glass sand, iron oxide, calcium carbonate, dolomite, and gypsum.",
+    "Astro Mining and Industrial is a dynamic and forward-thinking Egyptian mining company dedicated to the exploration, treatment, and upgrading of high-quality mining ores.",
   overview:
-    "Extracting treasures from the earth is more than a slogan for Astro. It reflects the company focus on turning Egypt's mineral resources into dependable industrial materials that support modern manufacturing and construction sectors.",
-  mission:
-    "Our mission is to harness the rich mineral resources of Egypt while adhering to the highest standards of environmental responsibility, sustainability, and product quality.",
-  vision:
-    "Our vision is to be one of the leading names in the industry and to establish a reliable Egyptian multi-minerals hub serving both local and international markets with the required specifications and quality levels.",
-  advantages: [
-    "Reliable multi-minerals platform serving domestic and export markets",
-    "Multiple efficient production lines built for consistent throughput",
-    "Customer-first coordination, flexibility, and commitment to deadlines"
+    "Our focus is on providing superior products and services in the extraction and processing of essential minerals including feldspar, kaolin, glass sand, iron oxides, calcium carbonate, dolomite, and gypsum.",
+  story:
+    "Extracting treasures from the earth is our slogan. It is a direct reminder that beneath the surface lies a valuable resource base that supports modern manufacturing, construction, and industrial growth.",
+  minerals: [
+    "Feldspar",
+    "Kaolin",
+    "Glass Sand",
+    "Iron Oxides",
+    "Calcium Carbonate",
+    "Dolomite",
+    "Gypsum"
+  ],
+  highlights: [
+    "Exploration, treatment, and upgrading handled within one industrial workflow",
+    "Superior mineral purity prepared for local and export-focused supply",
+    "A growing Egyptian company focused on dependable service and product quality"
+  ],
+  visuals: [
+    {
+      src: "/assets/images/company/quarry-excavator.jpeg",
+      alt: "Excavator operating inside an Astro quarry"
+    },
+    {
+      src: "/assets/images/company/quarry-loader.png",
+      alt: "Loader moving white mineral stone at an Astro quarry"
+    }
+  ],
+  factCards: [
+    {
+      value: "7+",
+      label: "Core mineral categories"
+    },
+    {
+      value: "Egypt",
+      label: "Operations rooted in high-value quarry resources"
+    }
   ]
 };
 
 export const services = [
   {
     title: "Exploration",
-    copy: "Comprehensive geological surveys and assessments to identify and evaluate mineral deposits."
+    copy: "Comprehensive geological surveys and assessments to identify and evaluate mineral deposits.",
+    icon: "layers"
   },
   {
     title: "Treatment",
-    copy: "State-of-the-art processing techniques to treat and refine minerals while ensuring high purity."
+    copy: "State-of-the-art processing techniques to treat and refine minerals, ensuring high purity and quality.",
+    icon: "flask"
   },
   {
     title: "Upgrading",
-    copy: "Advanced methods that enhance raw materials and make them suitable for varied industrial applications."
+    copy: "Advanced methods to enhance the value of raw materials and make them suitable for various industrial applications.",
+    icon: "growth"
   },
   {
     title: "Supply Raw Materials",
-    copy: "Consistent supply of high-quality materials from mines and quarries backed by efficient German technology lines."
+    copy: "Providing high-quality raw materials from mines and quarries while ensuring products stand out through their exceptional quality.",
+    icon: "gem"
   }
 ];
+
+export const servicesContent = {
+  eyebrow: "Our Services",
+  title: "From quarry discovery to refined industrial supply",
+  copy:
+    "Astro supports clients across the full mineral value chain with practical field experience, treatment precision, and dependable raw material supply.",
+  visual: {
+    src: "/assets/images/company/quarry-loader.png",
+    alt: "Astro loader working with white mineral stone blocks"
+  }
+};
 
 export const products = [
   {
@@ -180,33 +222,6 @@ export const industries = [
   "Wastewater technology and treatment"
 ];
 
-export const values = [
-  {
-    title: "Quality",
-    copy:
-      "We prioritize the production and supply of high-quality minerals that meet stringent industry standards.",
-    icon: "growth"
-  },
-  {
-    title: "Integrity",
-    copy:
-      "We conduct business with transparency and uphold ethical practices across every part of our operations.",
-    icon: "shield"
-  },
-  {
-    title: "Innovation",
-    copy:
-      "We embrace technological advancement to improve exploration, processing, and product consistency.",
-    icon: "layers"
-  },
-  {
-    title: "Collaboration",
-    copy:
-      "We build strong partnerships with clients, stakeholders, and communities to drive mutual success.",
-    icon: "handshake"
-  }
-];
-
 export const stats = [
   { label: "Production Lines", value: "10+", icon: "factory" },
   { label: "Countries Served", value: "20+", icon: "globe" },
@@ -221,12 +236,36 @@ export const qualityHighlights = [
 ];
 
 export const partners = [
-  "Duravit",
-  "Kandil Glass",
-  "Pasabahce",
-  "Sphinx Glass",
-  "Crystal Glass",
-  "Mega Glass"
+  {
+    name: "Duravit",
+    logo: "/assets/images/partners/duravit.png",
+    alt: "Duravit logo"
+  },
+  {
+    name: "Kandil Glass",
+    logo: "/assets/images/partners/kandil.png",
+    alt: "Kandil logo"
+  },
+  {
+    name: "Pasabahce",
+    logo: "/assets/images/partners/pasabahce.png",
+    alt: "Pasabahce logo"
+  },
+  {
+    name: "Sphinx Glass",
+    logo: "/assets/images/partners/sphinx-glass.png",
+    alt: "Sphinx Glass logo"
+  },
+  {
+    name: "Crystal Glass",
+    logo: "/assets/images/partners/crystal-glass.png",
+    alt: "Crystal Glass logo"
+  },
+  {
+    name: "Mega Glass",
+    logo: "/assets/images/partners/mega-glass.png",
+    alt: "Mega Glass logo"
+  }
 ];
 
 export const globalReach = [
@@ -317,9 +356,11 @@ export const mapPins = [
 ];
 
 export const contactDetails = {
-  address: "71 Abdul Hamid Badawy St., Nozha, Nasr City, Cairo, Egypt",
-  phones: ["+20 101 115 2217", "0222667748", "0222667726", "01080040344", "01080040388"],
-  email: "info@astromining-industrial.com",
+  address: "71 Abdel Hamid Badawi, Sheraton, Heliopolis, Cairo, Egypt",
+  telephones: ["0222667748", "0222667726", "01080040344"],
+  whatsapp: "01080040388",
+  emails: ["info@astromining-industrial.com", "sales@astromining-industrial.com"],
+  website: "www.astromining-industrial.com",
   social: {
     linkedin: "https://www.linkedin.com/company/astro-mining-and-industrial-company",
     facebook: "https://www.facebook.com/share/1AXm2QHTaz/",
