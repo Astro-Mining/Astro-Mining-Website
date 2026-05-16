@@ -72,8 +72,6 @@ export default function CompanyStorySection({ content }) {
           <div className={styles.copyOuter}>
             <div className={styles.copyColumn}>
               <span className="eyebrow">{content.eyebrow}</span>
-              <h2 className={clsx("section-title", styles.heading)}>{content.title}</h2>
-              <p className="section-copy">{content.copy}</p>
               <div className={styles.progress}>
                 {content.steps.map((step, index) => (
                   <span
