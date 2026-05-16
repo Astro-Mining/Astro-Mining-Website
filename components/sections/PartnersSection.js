@@ -1,48 +1,79 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Icon from "@/components/shared/Icon";
 import styles from "@/components/sections/PartnersSection.module.css";
 
 const AUTO_STEP_DELAY = 4200;
+const RESET_DELAY = 520;
 
 export default function PartnersSection({ partners }) {
-  const trackRef = useRef(null);
+  const viewportRef = useRef(null);
+  const railRef = useRef(null);
+  const stepWidthRef = useRef(0);
+  const setWidthRef = useRef(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [stepWidth, setStepWidth] = useState(0);
-  const items = useMemo(() => {
-    const first = partners[0];
-    const last = partners[partners.length - 1];
+  const items = useMemo(() => [...partners, ...partners, ...partners], [partners]);
 
-    return [last, ...partners, first];
-  }, [partners]);
+  const normalizePosition = useCallback(() => {
+    const viewport = viewportRef.current;
+    const setWidth = setWidthRef.current;
+
+    if (!viewport || !setWidth) {
+      return;
+    }
+
+    if (viewport.scrollLeft >= setWidth * 2) {
+      viewport.scrollLeft -= setWidth;
+    } else if (viewport.scrollLeft <= 0) {
+      viewport.scrollLeft += setWidth;
+    }
+  }, []);
+
+  const moveBy = useCallback((direction) => {
+    const viewport = viewportRef.current;
+    const stepWidth = stepWidthRef.current;
+
+    if (!viewport || !stepWidth) {
+      return;
+    }
+
+    viewport.scrollBy({
+      left: stepWidth * direction,
+      behavior: "smooth"
+    });
+
+    window.setTimeout(normalizePosition, RESET_DELAY);
+  }, [normalizePosition]);
 
   useEffect(() => {
-    const track = trackRef.current;
+    const viewport = viewportRef.current;
+    const rail = railRef.current;
 
-    if (!track) {
+    if (!viewport || !rail) {
       return undefined;
     }
 
-    const measureStep = () => {
-      const firstCard = track.querySelector(`.${styles.partnerCard}`);
-      const gap = Number.parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || "0");
-      const width = firstCard ? firstCard.getBoundingClientRect().width + gap : 0;
-      setStepWidth(width);
+    const measure = () => {
+      const firstCard = rail.querySelector(`.${styles.partnerCard}`);
+      const gap = Number.parseFloat(window.getComputedStyle(rail).gap || "0");
+      const stepWidth = firstCard ? firstCard.getBoundingClientRect().width + gap : 0;
+
+      stepWidthRef.current = stepWidth;
+      setWidthRef.current = stepWidth * partners.length;
+      viewport.scrollLeft = setWidthRef.current;
     };
 
-    measureStep();
+    measure();
 
-    const observer = new ResizeObserver(measureStep);
-    observer.observe(track);
+    const observer = new ResizeObserver(measure);
+    observer.observe(viewport);
 
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [partners.length]);
 
   useEffect(() => {
     if (isPaused) {
@@ -50,45 +81,13 @@ export default function PartnersSection({ partners }) {
     }
 
     const interval = window.setInterval(() => {
-      setCurrentIndex((value) => value + 1);
+      moveBy(1);
     }, AUTO_STEP_DELAY);
 
     return () => {
       window.clearInterval(interval);
     };
-  }, [isPaused]);
-
-  useEffect(() => {
-    if (isTransitionEnabled) {
-      return undefined;
-    }
-
-    const frame = window.requestAnimationFrame(() => {
-      setIsTransitionEnabled(true);
-    });
-
-    return () => {
-      window.cancelAnimationFrame(frame);
-    };
-  }, [isTransitionEnabled]);
-
-  const handleTransitionEnd = () => {
-    if (currentIndex === items.length - 1) {
-      setIsTransitionEnabled(false);
-      setCurrentIndex(1);
-    } else if (currentIndex === 0) {
-      setIsTransitionEnabled(false);
-      setCurrentIndex(items.length - 2);
-    }
-  };
-
-  const moveNext = () => {
-    setCurrentIndex((value) => value + 1);
-  };
-
-  const movePrevious = () => {
-    setCurrentIndex((value) => value - 1);
-  };
+  }, [isPaused, moveBy]);
 
   return (
     <section className={styles.section} id="partners">
@@ -99,7 +98,7 @@ export default function PartnersSection({ partners }) {
         <button
           aria-label="Show previous partners"
           className={styles.arrowButton}
-          onClick={movePrevious}
+          onClick={() => moveBy(-1)}
           type="button"
         >
           <Icon className={`${styles.arrowIcon} ${styles.arrowIconLeft}`} name="arrowRight" size={18} />
@@ -108,18 +107,9 @@ export default function PartnersSection({ partners }) {
           className={styles.viewport}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          ref={viewportRef}
         >
-          <div
-            aria-label="Partner companies"
-            className={styles.track}
-            onTransitionEnd={handleTransitionEnd}
-            ref={trackRef}
-            role="list"
-            style={{
-              "--partner-offset": `${currentIndex * stepWidth}px`,
-              "--partner-duration": isTransitionEnabled ? "620ms" : "0ms"
-            }}
-          >
+          <div aria-label="Partner companies" className={styles.rail} ref={railRef} role="list">
             {items.map((partner, index) => (
               <article className={styles.partnerCard} key={`${partner.name}-${index}`} role="listitem">
                 <div className={styles.logoFrame}>
@@ -127,6 +117,7 @@ export default function PartnersSection({ partners }) {
                     alt={partner.alt}
                     className={styles.logo}
                     fill
+                    priority={index < partners.length}
                     sizes="(max-width: 640px) 76vw, (max-width: 980px) 42vw, 20vw"
                     src={partner.logo}
                   />
@@ -138,7 +129,7 @@ export default function PartnersSection({ partners }) {
         <button
           aria-label="Show next partners"
           className={styles.arrowButton}
-          onClick={moveNext}
+          onClick={() => moveBy(1)}
           type="button"
         >
           <Icon className={styles.arrowIcon} name="arrowRight" size={18} />

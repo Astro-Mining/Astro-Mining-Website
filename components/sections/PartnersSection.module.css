@@ -16,14 +16,17 @@
 .viewport {
   overflow: hidden;
   mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent);
+  scrollbar-width: none;
 }
 
-.track {
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.rail {
   display: flex;
   gap: 1rem;
-  transform: translateX(calc(var(--partner-offset, 0px) * -1));
-  transition: transform var(--partner-duration, 620ms) ease;
-  will-change: transform;
+  width: max-content;
 }
 
 .arrowButton {
