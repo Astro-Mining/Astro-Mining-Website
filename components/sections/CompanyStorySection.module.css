@@ -1,0 +1,269 @@
+.section {
+  background:
+    radial-gradient(circle at top right, rgba(229, 109, 31, 0.1), transparent 22%),
+    linear-gradient(180deg, #fff 0%, #f7f9fc 100%);
+  padding: 5rem 0 5.25rem;
+}
+
+.shell {
+  position: relative;
+}
+
+.mobileStack {
+  display: none;
+}
+
+.stickyStage {
+  position: sticky;
+  top: 6.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.copyColumn {
+  display: grid;
+  align-content: start;
+  padding: 1rem 0 1.5rem;
+}
+
+.heading {
+  max-width: 32rem;
+}
+
+.progress {
+  display: flex;
+  gap: 0.55rem;
+  margin: 1.5rem 0 1.2rem;
+}
+
+.progressDot {
+  width: 2.6rem;
+  height: 0.22rem;
+  background: rgba(17, 24, 39, 0.12);
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease;
+}
+
+.progressDotActive {
+  background: var(--color-orange-600);
+  transform: scaleX(1.06);
+  transform-origin: left center;
+}
+
+.activePanel {
+  position: relative;
+  min-height: 28rem;
+}
+
+.activePanelInner {
+  display: grid;
+  gap: 1rem;
+}
+
+.stepLabel {
+  color: var(--color-orange-600);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.94rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stepTitle {
+  margin: 0;
+  color: var(--color-ink-900);
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.98;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.stepCopy,
+.stepDetail {
+  margin: 0;
+  line-height: 1.82;
+}
+
+.stepCopy {
+  color: var(--color-ink-800);
+}
+
+.stepDetail {
+  color: var(--color-steel-500);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.bullets {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 1.35rem;
+  color: var(--color-ink-800);
+  line-height: 1.75;
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 999px;
+  background: var(--color-orange-600);
+}
+
+.visualColumn {
+  display: grid;
+}
+
+.visualFrame {
+  position: relative;
+  min-height: 39rem;
+  overflow: hidden;
+  clip-path: polygon(13% 0, 100% 0, 100% 100%, 0 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.visualFrame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.08), rgba(17, 24, 39, 0.28));
+}
+
+.visualLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.05);
+  transition:
+    opacity 440ms ease,
+    transform 620ms ease;
+}
+
+.visualLayerActive {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.visualCaption {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 2;
+  display: grid;
+  gap: 0.4rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1rem;
+  color: var(--color-white);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.36), rgba(15, 23, 42, 0.7));
+  backdrop-filter: blur(10px);
+}
+
+.visualCaption span {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.visualCaption strong {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.markers {
+  margin-top: -39rem;
+}
+
+.marker {
+  height: 32rem;
+}
+
+@media (max-width: 980px) {
+  .stickyStage {
+    display: none;
+  }
+
+  .mobileStack {
+    display: grid;
+    gap: 1.4rem;
+  }
+
+  .mobileCard {
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 1.35rem;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--shadow-card);
+  }
+
+  .mobileVisual {
+    position: relative;
+    min-height: 18rem;
+  }
+
+  .mobileCopy {
+    display: grid;
+    gap: 1rem;
+    padding: 1.35rem;
+  }
+
+  .stickyStage {
+    position: relative;
+    top: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .activePanel {
+    min-height: 0;
+  }
+
+  .visualFrame {
+    min-height: 26rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .markers {
+    display: none;
+  }
+}

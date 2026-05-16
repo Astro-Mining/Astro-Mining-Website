@@ -121,6 +121,91 @@ export const servicesContent = {
   }
 };
 
+export const companyStoryContent = {
+  eyebrow: "About Us & Services",
+  title: "One integrated story from the quarry to industrial supply",
+  copy:
+    "Scroll through Astro's journey to see how our company profile and service capabilities move together from exploration into export-ready mineral delivery.",
+  cta: {
+    label: "Explore Products",
+    href: "#products"
+  },
+  steps: [
+    {
+      id: "company-overview",
+      label: "01 / About Astro",
+      title: "A forward-thinking Egyptian mining company",
+      copy:
+        "Astro Mining and Industrial is a dynamic and forward-thinking Egyptian mining company dedicated to the exploration, treatment, and upgrading of high-quality mining ores.",
+      detail:
+        "Our focus is on providing superior products and services in the extraction and processing of essential minerals for local and international markets.",
+      bullets: [
+        "Operations built around dependable mineral quality and industrial relevance.",
+        "Integrated workflow spanning exploration, treatment, and upgrading."
+      ],
+      chips: ["Egyptian Mining", "Industrial Minerals", "Export Supply"],
+      image: {
+        src: "/assets/images/company/quarry-excavator.jpeg",
+        alt: "Excavator operating inside an Astro quarry"
+      }
+    },
+    {
+      id: "mineral-focus",
+      label: "02 / Mineral Focus",
+      title: "Essential minerals prepared for industrial demand",
+      copy:
+        "Astro extracts and processes key industrial minerals including feldspar, kaolin, glass sand, iron oxides, calcium carbonate, dolomite, and gypsum.",
+      detail:
+        "Extracting treasures from the earth is our slogan because beneath the surface lies a resource base that supports modern manufacturing, construction, and industrial growth.",
+      bullets: [
+        "Superior mineral purity prepared for ceramic, glass, paint, paper, and chemical uses.",
+        "A focused portfolio aligned with both local production and export channels."
+      ],
+      chips: ["Feldspar", "Kaolin", "Glass Sand", "Iron Oxides", "Calcium Carbonate", "Dolomite", "Gypsum"],
+      image: {
+        src: "/assets/images/company/quarry-loader.png",
+        alt: "Loader moving white mineral stone at an Astro quarry"
+      }
+    },
+    {
+      id: "exploration-treatment",
+      label: "03 / Exploration & Treatment",
+      title: "Exploration and treatment under one workflow",
+      copy:
+        "Comprehensive geological surveys and assessments help identify and evaluate deposits, while state-of-the-art treatment processes refine minerals toward high purity and quality.",
+      detail:
+        "Astro supports clients with practical field experience and production discipline rather than a generic trading-only model.",
+      bullets: [
+        "Exploration: geological surveys and mineral deposit evaluation.",
+        "Treatment: modern refining methods that improve consistency and purity."
+      ],
+      chips: ["Exploration", "Geological Survey", "Treatment", "Quality"],
+      image: {
+        src: "/assets/images/company/quarry-excavator.jpeg",
+        alt: "Astro exploration work at a quarry site"
+      }
+    },
+    {
+      id: "upgrading-supply",
+      label: "04 / Upgrading & Supply",
+      title: "Upgrading minerals into export-ready supply",
+      copy:
+        "Advanced upgrading methods increase the value of raw materials and prepare them for multiple industrial applications, while reliable supply keeps Astro competitive across markets.",
+      detail:
+        "Providing high-quality raw materials from mines and quarries ensures Astro products stand out because of their exceptional quality and readiness for industrial use.",
+      bullets: [
+        "Upgrading raw materials into stronger industrial inputs.",
+        "Supplying high-quality minerals with practical export and service focus."
+      ],
+      chips: ["Upgrading", "Raw Material Supply", "Export Ready"],
+      image: {
+        src: "/assets/images/company/partnership-handshake.jpeg",
+        alt: "Astro partnership and industrial supply handshake"
+      }
+    }
+  ]
+};
+
 export const products = [
   {
     name: "Silica Sand",
