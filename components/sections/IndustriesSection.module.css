@@ -1,6 +1,32 @@
 .section {
+  position: relative;
+  overflow: hidden;
   padding: 2rem 0;
   background: var(--color-white);
+}
+
+.section::before,
+.section::after {
+  content: "";
+  position: absolute;
+  opacity: 0.14;
+  background-image: radial-gradient(#94a3b8 1.1px, transparent 1.1px);
+  background-size: 12px 12px;
+  pointer-events: none;
+}
+
+.section::before {
+  top: 1.15rem;
+  right: 2.25rem;
+  width: 7.5rem;
+  height: 4.5rem;
+}
+
+.section::after {
+  bottom: 1.4rem;
+  left: 2.25rem;
+  width: 5.5rem;
+  height: 5.5rem;
 }
 
 .wrap {
@@ -68,5 +94,13 @@
   .card:nth-child(7),
   .moreCard {
     border-left: 0;
+  }
+
+  .section::before {
+    right: 1rem;
+  }
+
+  .section::after {
+    left: 1rem;
   }
 }
