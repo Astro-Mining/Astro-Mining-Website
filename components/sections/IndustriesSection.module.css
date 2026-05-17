@@ -2,9 +2,7 @@
   position: relative;
   overflow: hidden;
   padding: 2rem 0;
-  background:
-    radial-gradient(circle at top right, rgba(229, 109, 31, 0.1), transparent 22%),
-    linear-gradient(180deg, #fff 0%, #f7f9fc 100%);
+  background: linear-gradient(180deg, #fff 0%, #f7f2ea 100%);
 }
 
 .section::before,
