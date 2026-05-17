@@ -2,7 +2,8 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, #fff 0%, #f7f2ea 100%);
-  padding: 5.2rem 0 5rem;
+  margin-top: -0.1rem;
+  padding: 2.6rem 0 5rem;
 }
 
 .section::before,
@@ -18,7 +19,7 @@
 }
 
 .section::before {
-  top: 2.4rem;
+  top: 1.25rem;
   left: 2rem;
 }
 
