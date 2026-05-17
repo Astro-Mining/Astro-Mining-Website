@@ -55,6 +55,18 @@
   position: relative;
 }
 
+.sectionBlendBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 9rem;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(247, 242, 234, 0) 0%, rgba(247, 242, 234, 0.3) 24%, rgba(247, 242, 234, 0.72) 54%, rgba(247, 242, 234, 0.94) 82%, #f7f2ea 100%);
+}
+
 .mobileStack {
   display: none;
 }
@@ -265,6 +277,10 @@
   .mobileStack {
     display: grid;
     gap: 1.4rem;
+  }
+
+  .sectionBlendBottom {
+    height: 6rem;
   }
 
   .mobileCard {

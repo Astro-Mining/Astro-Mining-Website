@@ -224,6 +224,7 @@ export default function CompanyStorySection({ content }) {
             </article>
           ))}
         </div>
+        <div className={styles.sectionBlendBottom} aria-hidden="true" />
       </div>
     </section>
   );
