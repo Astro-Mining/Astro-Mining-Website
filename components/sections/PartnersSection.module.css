@@ -9,8 +9,8 @@
 .section::after {
   content: "";
   position: absolute;
-  opacity: 0.14;
-  background-image: radial-gradient(rgba(148, 163, 184, 0.95) 1.1px, transparent 1.1px);
+  opacity: 0.24;
+  background-image: radial-gradient(rgba(71, 85, 105, 0.86) 1.1px, transparent 1.1px);
   background-size: 12px 12px;
   pointer-events: none;
 }
@@ -18,15 +18,15 @@
 .section::before {
   top: 0.85rem;
   left: 1.9rem;
-  width: 6rem;
-  height: 4rem;
+  width: 6.75rem;
+  height: 4.5rem;
 }
 
 .section::after {
   right: 1.9rem;
   bottom: 0.75rem;
-  width: 8rem;
-  height: 4.5rem;
+  width: 8.5rem;
+  height: 5rem;
 }
 
 .controlsRow {
@@ -137,7 +137,7 @@
 
   .section::before,
   .section::after {
-    opacity: 0.1;
+    opacity: 0.16;
   }
 
   .section::before {

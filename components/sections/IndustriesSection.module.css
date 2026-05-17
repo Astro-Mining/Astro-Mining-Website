@@ -9,8 +9,8 @@
 .section::after {
   content: "";
   position: absolute;
-  opacity: 0.14;
-  background-image: radial-gradient(#94a3b8 1.1px, transparent 1.1px);
+  opacity: 0.26;
+  background-image: radial-gradient(rgba(71, 85, 105, 0.88) 1.15px, transparent 1.15px);
   background-size: 12px 12px;
   pointer-events: none;
 }
@@ -18,15 +18,15 @@
 .section::before {
   top: 1.15rem;
   right: 2.25rem;
-  width: 7.5rem;
-  height: 4.5rem;
+  width: 8rem;
+  height: 5rem;
 }
 
 .section::after {
   bottom: 1.4rem;
   left: 2.25rem;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
 .wrap {
