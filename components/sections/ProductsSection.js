@@ -75,6 +75,7 @@ export default function ProductsSection({ products }) {
           </Reveal>
         </div>
       </div>
+      <div className={styles.sectionBlendBottom} aria-hidden="true" />
     </section>
   );
 }

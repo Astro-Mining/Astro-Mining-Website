@@ -2,7 +2,19 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, #fff 0%, #f7f2ea 100%);
+  margin-top: -4rem;
   padding: 3rem 0 2.5rem;
+}
+
+.blendTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, #f7f2ea 0%, rgba(247, 242, 234, 0.95) 22%, rgba(247, 242, 234, 0.68) 52%, rgba(247, 242, 234, 0.28) 78%, rgba(247, 242, 234, 0) 100%);
 }
 
 .section::before {
@@ -23,8 +35,9 @@
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
   gap: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.28);
   align-items: start;
+  position: relative;
+  z-index: 1;
 }
 
 .grid :global(.section-title) {
@@ -245,6 +258,10 @@
 }
 
 @media (max-width: 900px) {
+  .blendTop {
+    height: 5.5rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
   }

@@ -26,6 +26,7 @@ export default function GlobalReachSection({ countries, pins }) {
 
   return (
     <section className={styles.section}>
+      <div className={styles.blendTop} aria-hidden="true" />
       <div className={clsx("container", styles.grid)}>
         <Reveal direction="left" distance={38}>
           <span className="eyebrow">Our Global Reach</span>

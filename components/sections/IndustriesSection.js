@@ -5,6 +5,7 @@ import styles from "@/components/sections/IndustriesSection.module.css";
 export default function IndustriesSection({ industries }) {
   return (
     <section className={styles.section} id="industries">
+      <div className={styles.blendTop} aria-hidden="true" />
       <div className={styles.wrap}>
         <Reveal className={styles.frame} direction="up" distance={34}>
           <h3 className={styles.title}>Industries We Serve</h3>
@@ -22,6 +23,7 @@ export default function IndustriesSection({ industries }) {
           </div>
         </Reveal>
       </div>
+      <div className={styles.sectionBlendBottom} aria-hidden="true" />
     </section>
   );
 }

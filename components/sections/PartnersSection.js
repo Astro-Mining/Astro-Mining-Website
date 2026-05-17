@@ -91,6 +91,7 @@ export default function PartnersSection({ partners }) {
 
   return (
     <section className={styles.section} id="partners">
+      <div className={styles.blendTop} aria-hidden="true" />
       <div className="container">
         <span className="eyebrow">Our Partners</span>
       </div>
@@ -135,6 +136,7 @@ export default function PartnersSection({ partners }) {
           <Icon className={styles.arrowIcon} name="arrowRight" size={18} />
         </button>
       </div>
+      <div className={styles.sectionBlendBottom} aria-hidden="true" />
     </section>
   );
 }

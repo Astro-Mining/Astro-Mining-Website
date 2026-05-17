@@ -1,8 +1,30 @@
 .section {
   position: relative;
   overflow: hidden;
+  margin-top: -4rem;
   padding: 2rem 0;
   background: linear-gradient(180deg, #fff 0%, #f7f2ea 100%);
+}
+
+.blendTop,
+.sectionBlendBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blendTop {
+  top: 0;
+  height: 8rem;
+  background: linear-gradient(180deg, #f7f2ea 0%, rgba(247, 242, 234, 0.95) 22%, rgba(247, 242, 234, 0.68) 52%, rgba(247, 242, 234, 0.28) 78%, rgba(247, 242, 234, 0) 100%);
+}
+
+.sectionBlendBottom {
+  bottom: 0;
+  height: 8rem;
+  background: linear-gradient(180deg, rgba(247, 242, 234, 0) 0%, rgba(247, 242, 234, 0.28) 24%, rgba(247, 242, 234, 0.68) 56%, rgba(247, 242, 234, 0.92) 84%, #f7f2ea 100%);
 }
 
 .section::before,
@@ -30,6 +52,8 @@
 }
 
 .wrap {
+  position: relative;
+  z-index: 1;
   width: min(var(--container), calc(100vw - 2rem));
   margin: 0 auto;
 }
@@ -102,5 +126,10 @@
 
   .section::after {
     left: 1rem;
+  }
+
+  .blendTop,
+  .sectionBlendBottom {
+    height: 5.5rem;
   }
 }
