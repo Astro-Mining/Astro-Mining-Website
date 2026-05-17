@@ -64,43 +64,45 @@ export default function GlobalReachSection({ countries, pins }) {
           <div className={styles.mapOffset} aria-hidden="true" />
           <div className={styles.mapCard}>
             <div className={styles.mapTexture} />
-            <Image
-              alt=""
-              className={styles.mapShape}
-              fill
-              priority={false}
-              sizes="(max-width: 900px) 100vw, 66vw"
-              src="/assets/images/world-map-astro.svg"
-            />
-            {pins.map((pin) => (
-              <button
-                key={pin.country}
-                className={clsx(styles.pin, {
-                  [styles.pinActive]: activePin.country === pin.country
-                })}
-                onFocus={() => setActivePin(pin)}
-                onMouseEnter={() => setActivePin(pin)}
-                style={getProjectedPosition(pin.latitude, pin.longitude)}
-                type="button"
-              >
-                <span className={styles.pinMarker}>
-                  <Icon name="mapPin" size={16} />
-                </span>
-                <span className={styles.pinPreview}>
-                  <span className={styles.flagBadge}>
-                    <Image
-                      alt={pin.flagAlt}
-                      className={styles.flagImage}
-                      height={40}
-                      src={pin.flag}
-                      width={56}
-                    />
+            <div className={styles.mapCanvas}>
+              <Image
+                alt="World map showing Astro export destinations"
+                className={styles.mapShape}
+                fill
+                priority={false}
+                sizes="(max-width: 900px) 100vw, 66vw"
+                src="/assets/images/world-map-astro.svg"
+              />
+              {pins.map((pin) => (
+                <button
+                  key={pin.country}
+                  className={clsx(styles.pin, {
+                    [styles.pinActive]: activePin.country === pin.country
+                  })}
+                  onFocus={() => setActivePin(pin)}
+                  onMouseEnter={() => setActivePin(pin)}
+                  style={getProjectedPosition(pin.latitude, pin.longitude)}
+                  type="button"
+                >
+                  <span className={styles.pinMarker}>
+                    <Icon name="mapPin" size={16} />
                   </span>
-                  <strong>{pin.project}</strong>
-                  <span>{pin.country}</span>
-                </span>
-              </button>
-            ))}
+                  <span className={styles.pinPreview}>
+                    <span className={styles.flagBadge}>
+                      <Image
+                        alt={pin.flagAlt}
+                        className={styles.flagImage}
+                        height={40}
+                        src={pin.flag}
+                        width={56}
+                      />
+                    </span>
+                    <strong>{pin.project}</strong>
+                    <span>{pin.country}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
             <div className={styles.activeCard}>
               <div className={styles.activeFlag}>
                 <Image

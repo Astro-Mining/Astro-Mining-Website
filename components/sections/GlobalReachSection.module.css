@@ -74,12 +74,17 @@
   background-size: 16px 16px;
 }
 
-.mapShape {
+.mapCanvas {
   position: absolute;
   inset: 1.2rem;
-  width: calc(100% - 2.4rem);
-  height: calc(100% - 2.4rem);
-  object-fit: contain;
+}
+
+.mapShape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
   object-position: center;
   opacity: 0.96;
 }
@@ -297,10 +302,14 @@
     padding: 1rem;
   }
 
-  .mapShape {
+  .mapCanvas {
     inset: 1rem;
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
+  }
+
+  .mapShape {
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .activeCard {
