@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import clsx from "clsx";
 import Reveal from "@/components/shared/Reveal";
 import styles from "@/components/sections/PartnersSection.module.css";
 
@@ -24,7 +25,7 @@ export default function PartnersSection({ partners }) {
                 <div className={styles.logoFrame}>
                   <Image
                     alt={partner.alt}
-                    className={styles.logo}
+                    className={clsx(styles.logo, partner.name === "Sphinx Glass" && styles.logoSphinx)}
                     fill
                     sizes="(max-width: 640px) 42vw, (max-width: 980px) 24vw, 14vw"
                     src={partner.logo}
