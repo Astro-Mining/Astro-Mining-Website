@@ -14,7 +14,7 @@ export default function WhyAstroSection({ stats }) {
           <p className={styles.copy}>
             Astro emphasizes laboratory-backed quality control, production precision, and dependable quantities delivered within agreed deadlines.
           </p>
-          <a className={styles.cta} href="#contact">Learn More About Us</a>
+          <a className={styles.cta} href="/contact">Learn More About Us</a>
         </Reveal>
         <div className={styles.stats}>
           {stats.map((stat, index) => (

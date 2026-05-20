@@ -1,9 +1,15 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 40;
+  transition: background 280ms ease, box-shadow 280ms ease;
+}
+
+.scrolled {
+  background: var(--color-ink-950);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .inner {
@@ -33,7 +39,8 @@
   font-size: 0.88rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-ink-800);
+  color: rgba(255, 255, 255, 0.78);
+  transition: color var(--transition);
 }
 
 .link::after {
@@ -45,8 +52,12 @@
   height: 2px;
   transform: scaleX(0);
   transform-origin: left;
-  background: var(--color-orange-600);
+  background: var(--color-orange-500);
   transition: transform var(--transition);
+}
+
+.link:hover {
+  color: var(--color-white);
 }
 
 .link:hover::after,
@@ -55,7 +66,7 @@
 }
 
 .active {
-  color: var(--color-orange-600);
+  color: var(--color-orange-500);
 }
 
 .actions {
@@ -70,11 +81,10 @@
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  border: 1px solid rgba(17, 24, 39, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
-  background: var(--color-white);
-  color: var(--color-ink-900);
-  box-shadow: var(--shadow-card);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
 }
 
 .mobilePanel {
@@ -88,12 +98,16 @@
 .desktopCta :global(.button) {
   padding: 1.05rem 1.7rem;
   border-radius: 0.35rem;
-  background: var(--color-ink-900);
+  background: var(--color-orange-600);
   box-shadow: none;
 }
 
+.desktopCta :global(.button):hover {
+  background: var(--color-orange-500);
+}
+
 .desktopCta :global(.outline) {
-  border-color: var(--color-ink-900);
+  border-color: var(--color-orange-600);
 }
 
 @media (max-width: 980px) {
@@ -172,10 +186,17 @@
     padding: 8rem 0 1.5rem;
   }
 
-  .mobileNav a {
+  .mobileLink {
     font-family: var(--font-heading), sans-serif;
     font-size: 1rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: var(--color-ink-900);
+    transition: color var(--transition);
+  }
+
+  .mobileLink:hover,
+  .mobileLinkActive {
+    color: var(--color-orange-600);
   }
 }

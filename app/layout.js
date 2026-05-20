@@ -1,5 +1,8 @@
 import { Cairo, Gantari } from "next/font/google";
 import "@/app/globals.css";
+import SiteHeader from "@/components/layout/SiteHeader";
+import SiteFooter from "@/components/layout/SiteFooter";
+import { navigation, contactDetails } from "@/data/siteContent";
 
 const bodyFont = Gantari({
   subsets: ["latin"],
@@ -63,7 +66,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${bodyFont.variable} ${headingFont.variable} ${arabicFont.variable}`}>
-        {children}
+        <SiteHeader navigation={navigation} />
+        <main>{children}</main>
+        <SiteFooter navigation={navigation} contact={contactDetails} />
       </body>
     </html>
   );

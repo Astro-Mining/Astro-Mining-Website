@@ -1,11 +1,11 @@
 export const navigation = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Industries", href: "#industries" },
-  { label: "Why Astro", href: "#why-astro" },
-  { label: "Partners", href: "#partners" },
-  { label: "Contact Us", href: "#contact" }
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Products", href: "/products" },
+  { label: "Services", href: "/services" },
+  { label: "Export Markets", href: "/exports" },
+  { label: "Partners", href: "/partners" },
+  { label: "Contact Us", href: "/contact" }
 ];
 
 export const heroContent = {
@@ -15,8 +15,8 @@ export const heroContent = {
   titleBottom: "From The Earth",
   copy:
     "Astro Mining and Industrial Company is a rising Egyptian mining company working in the field of exploration, treatment and upgrading of high-quality mining ores for local and international markets.",
-  primaryCta: { label: "Explore Products", href: "#products" },
-  secondaryCta: { label: "Get a Quote", href: "#contact" }
+  primaryCta: { label: "Explore Products", href: "/products" },
+  secondaryCta: { label: "Get a Quote", href: "/contact" }
 };
 
 export const features = [
@@ -128,7 +128,7 @@ export const companyStoryContent = {
     "Scroll through Astro's journey to see how our company profile and service capabilities move together from exploration into export-ready mineral delivery.",
   cta: {
     label: "Explore Products",
-    href: "#products"
+    href: "/products"
   },
   steps: [
     {
@@ -438,6 +438,13 @@ export const mapPins = [
     flag: "/assets/images/flags/algeria.svg",
     flagAlt: "Algeria flag"
   }
+];
+
+export const textOnlyPartners = [
+  { name: "Cidar" },
+  { name: "Beam" },
+  { name: "Siscam" },
+  { name: "Saint-Gobain" }
 ];
 
 export const contactDetails = {

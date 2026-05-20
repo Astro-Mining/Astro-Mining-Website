@@ -62,7 +62,7 @@ export default function ProductsSection({ products }) {
                   <div className={styles.body}>
                     <h3>{product.name}</h3>
                     <div className={styles.rule} />
-                    <a className={styles.link} href="#contact">View Details</a>
+                    <a className={styles.link} href="/contact">View Details</a>
                   </div>
                 </article>
               </Reveal>
@@ -71,7 +71,7 @@ export default function ProductsSection({ products }) {
         </div>
         <div className={styles.actions}>
           <Reveal direction="up" distance={28}>
-            <a className={styles.allButton} href="#contact">View All Products</a>
+            <a className={styles.allButton} href="/contact">View All Products</a>
           </Reveal>
         </div>
       </div>

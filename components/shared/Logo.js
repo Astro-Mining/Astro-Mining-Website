@@ -1,15 +1,16 @@
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "@/components/shared/Logo.module.css";
 
 export default function Logo({ inverted = false, size = "default" }) {
   return (
-    <a
+    <Link
       className={clsx(styles.logo, {
         [styles.inverted]: inverted,
         [styles.large]: size === "large"
       })}
-      href="#home"
+      href="/"
       aria-label="Astro Mining & Industrial home"
     >
       <div className={styles.mark}>
@@ -21,6 +22,6 @@ export default function Logo({ inverted = false, size = "default" }) {
           width={size === "large" ? 118 : 82}
         />
       </div>
-    </a>
+    </Link>
   );
 }

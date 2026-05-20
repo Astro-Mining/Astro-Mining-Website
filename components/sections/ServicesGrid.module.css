@@ -1,0 +1,67 @@
+.section {
+  background: var(--color-sand-100);
+}
+
+.intro {
+  margin-bottom: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.card {
+  position: relative;
+  padding: 2.5rem;
+  overflow: hidden;
+}
+
+.iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-sm);
+  background: var(--color-orange-600);
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.num {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: rgba(17, 24, 39, 0.05);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cardTitle {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink-900);
+}
+
+.cardCopy {
+  margin: 0;
+  color: var(--color-steel-500);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
