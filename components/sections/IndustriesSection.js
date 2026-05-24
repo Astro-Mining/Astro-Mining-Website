@@ -16,10 +16,6 @@ export default function IndustriesSection({ industries }) {
                 <span>{industry.name}</span>
               </div>
             ))}
-            <a className={styles.moreCard} href="#contact">
-              <Icon name="plus" size={22} />
-              <span>View All Industries</span>
-            </a>
           </div>
         </Reveal>
       </div>

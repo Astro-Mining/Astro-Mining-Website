@@ -81,9 +81,9 @@ video {
 .section-title {
   margin: 0;
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(2.25rem, 4vw, 4.25rem);
-  line-height: 0.98;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.75rem, 2.8vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 

@@ -74,13 +74,16 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin-top: 3.1rem;
 }
 
 .card {
+  flex: 0 0 calc((100% - 4rem) / 5);
+  min-width: 0;
   overflow: hidden;
   border: 1px solid rgba(17, 24, 39, 0.08);
   border-radius: 0.6rem;
@@ -204,6 +207,10 @@
 }
 
 .link {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
   color: var(--color-orange-600);
   font-family: var(--font-heading), sans-serif;
   font-size: 0.74rem;
@@ -242,14 +249,8 @@
 .pearl { background: linear-gradient(135deg, #eef4ee, #9abf9a); }
 
 @media (max-width: 1080px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 800px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+  .card {
+    flex: 0 0 calc((100% - 2rem) / 3);
   }
 }
 
@@ -262,7 +263,190 @@
     height: 5rem;
   }
 
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .card {
+    flex: 0 0 calc((100% - 1rem) / 2);
   }
+}
+
+/* ── Modal ──────────────────────────────────────────────────── */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(4px);
+  animation: modalFadeIn 0.2s ease;
+}
+
+.modalCard {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--color-white);
+  border-radius: 1rem;
+  box-shadow: 0 32px 64px rgba(15, 23, 42, 0.28);
+  animation: modalSlideUp 0.25s ease;
+}
+
+.modalClose {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-ink-900);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.16);
+  transition: background var(--transition);
+}
+
+.modalClose:hover {
+  background: var(--color-white);
+}
+
+.modalVisual {
+  position: relative;
+  height: 220px;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+}
+
+.modalImg {
+  object-fit: cover;
+}
+
+.modalVisualOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.58) 0%, transparent 55%);
+}
+
+.modalTitle {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.modalBody {
+  padding: 1.5rem 1.75rem 2rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.modalUses {
+  margin: 0;
+  color: var(--color-steel-500);
+  line-height: 1.75;
+}
+
+.modalMeta {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.modalMetaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.7rem 1rem;
+  background: var(--color-sand-100);
+  border-radius: 0.5rem;
+}
+
+.modalMetaItem span {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-steel-500);
+}
+
+.modalMetaItem strong {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.92rem;
+  color: var(--color-ink-900);
+}
+
+.modalSpecs h4 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-steel-500);
+}
+
+.modalSpecs ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.modalSpecs li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--color-ink-800);
+}
+
+.modalSpecs li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-orange-600);
+  flex-shrink: 0;
+}
+
+.modalCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.75rem;
+  background: var(--color-orange-600);
+  color: var(--color-white);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 0.2rem;
+  transition: background var(--transition);
+}
+
+.modalCta:hover {
+  background: var(--color-orange-500);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }

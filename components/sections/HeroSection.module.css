@@ -80,9 +80,9 @@
 .title {
   margin: 0;
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(3.7rem, 6vw, 6.2rem);
-  line-height: 0.9;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.6rem, 4.2vw, 4.6rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
   color: var(--color-ink-900);
 }
@@ -257,7 +257,7 @@
   }
 
   .title {
-    font-size: clamp(3rem, 15vw, 4.7rem);
+    font-size: clamp(2.2rem, 10vw, 3.6rem);
   }
 
   .copy {

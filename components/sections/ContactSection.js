@@ -5,7 +5,7 @@ import styles from "@/components/sections/ContactSection.module.css";
 
 export default function ContactSection({ contact }) {
   return (
-    <section className={styles.section} id="contact">
+    <section className={clsx("section", styles.section)} id="contact">
       <div className={clsx("container", styles.grid)}>
         <Reveal className={styles.infoCard} direction="left" distance={38}>
           <span className="eyebrow">Contact Us</span>

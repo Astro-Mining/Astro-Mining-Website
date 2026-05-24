@@ -52,9 +52,6 @@ export default function SiteFooter({ navigation, contact }) {
             </a>
             <p><Icon name="mail" size={18} /> {contact.emails[0]}</p>
             <p><Icon name="mail" size={18} /> {contact.emails[1]}</p>
-            <a className={styles.infoLink} href={`https://${contact.website}`} rel="noreferrer" target="_blank">
-              <Icon name="globe" size={18} /> {contact.website}
-            </a>
           </div>
         </div>
         <div className={styles.column}>

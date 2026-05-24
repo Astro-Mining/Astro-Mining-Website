@@ -43,14 +43,16 @@
 .grid {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.95rem 1rem;
   margin-top: 1.15rem;
 }
 
 .clientCard {
   min-width: 0;
+  flex: 0 0 calc((100% - 2 * 1rem) / 3);
 }
 
 .cardInner {
@@ -93,14 +95,14 @@
 }
 
 @media (min-width: 760px) {
-  .grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .clientCard {
+    flex: 0 0 calc((100% - 3 * 1rem) / 4);
   }
 }
 
 @media (min-width: 1080px) {
-  .grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+  .clientCard {
+    flex: 0 0 calc((100% - 5 * 1rem) / 6);
   }
 
   .cardInner {
