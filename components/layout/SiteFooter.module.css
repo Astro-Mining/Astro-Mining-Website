@@ -20,7 +20,7 @@
 .footerLogo {
   width: auto;
   height: auto;
-  max-width: clamp(5.6rem, 9vw, 7rem);
+  max-width: clamp(8rem, 13vw, 11rem);
 }
 
 .footer h3 {
