@@ -21,9 +21,9 @@
   padding-top: 1.5rem;
 }
 
-.inner :global(.logo) {
-  transform: scale(1.12) translateY(-40px);
-  transform-origin: left center;
+.logoWrap {
+  align-self: flex-start;
+  margin-top: -1.5rem;
 }
 
 .desktopNav {
@@ -145,8 +145,8 @@
     padding-top: 1rem;
   }
 
-  .inner :global(.logo) {
-    transform: scale(0.94);
+  .logoWrap {
+    margin-top: -0.75rem;
   }
 
   .mobileBackdrop {

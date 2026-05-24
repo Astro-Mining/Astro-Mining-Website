@@ -34,7 +34,9 @@ export default function SiteHeader({ navigation }) {
   return (
     <header className={clsx(styles.header, { [styles.scrolled]: scrolled, [styles.homeAtTop]: homeAtTop })}>
       <div className={clsx("container", styles.inner)}>
-        <Logo key={logoVariant} size="large" variant={logoVariant} />
+        <div className={styles.logoWrap}>
+          <Logo key={logoVariant} size="large" variant={logoVariant} />
+        </div>
         <nav className={styles.desktopNav} aria-label="Primary navigation">
           {navigation.map((item) => (
             <Link
