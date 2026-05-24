@@ -540,6 +540,8 @@ export const contactDetails = {
   social: {
     linkedin: "https://www.linkedin.com/company/astro-mining-and-industrial-company",
     facebook: "https://www.facebook.com/share/1AXm2QHTaz/",
-    instagram: "https://www.instagram.com/"
+    instagram: "https://www.instagram.com/",
+    youtube: "https://youtube.com/@astromining?si=tjj97qqjeNy3rwuU",
+    tiktok: "https://www.tiktok.com/@astro.mining?_r=1&_t=ZS-96diqpYF5hx"
   }
 };

@@ -28,6 +28,12 @@ export default function SiteFooter({ navigation, contact }) {
             <a aria-label="Instagram" href={contact.social.instagram} rel="noreferrer" target="_blank">
               <Icon name="instagram" size={18} />
             </a>
+            <a aria-label="YouTube" href={contact.social.youtube} rel="noreferrer" target="_blank">
+              <Icon name="youtube" size={18} />
+            </a>
+            <a aria-label="TikTok" href={contact.social.tiktok} rel="noreferrer" target="_blank">
+              <Icon name="tiktok" size={18} />
+            </a>
           </div>
         </div>
         <div className={styles.column}>
