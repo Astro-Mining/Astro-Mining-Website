@@ -141,5 +141,29 @@
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .brandBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .infoList p,
+  .infoLink {
+    justify-content: center;
+  }
+
+  .downloadCard {
+    text-align: left;
+  }
+
+  .bottomBar {
+    text-align: center;
   }
 }

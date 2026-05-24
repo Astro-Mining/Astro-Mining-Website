@@ -72,7 +72,7 @@ export default function SiteFooter({ navigation, contact }) {
         </div>
       </div>
       <div className={styles.bottomBar}>
-        <div className="container">&copy; 2024 Astro Mining and Industrial. All Rights Reserved.</div>
+        <div className="container">&copy; 2026 Astro Mining and Industrial. All Rights Reserved.</div>
       </div>
     </footer>
   );
