@@ -28,8 +28,12 @@
 
 .cardImg {
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   transition: transform 0.45s ease;
+}
+
+.cardImgTop {
+  object-position: center top;
 }
 
 .card:hover .cardImg {

@@ -25,7 +25,7 @@ export default function ServicesGrid({ services }) {
                   <div className={styles.cardImage}>
                     <Image
                       alt={service.image.alt}
-                      className={styles.cardImg}
+                      className={clsx(styles.cardImg, { [styles.cardImgTop]: i === 0 })}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       src={service.image.src}
