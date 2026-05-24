@@ -22,7 +22,7 @@
 }
 
 .inner :global(.logo) {
-  transform: scale(1.12) translateY(-5px);
+  transform: scale(1.12) translateY(-15px);
   transform-origin: left center;
 }
 
