@@ -234,7 +234,7 @@ export const products = [
     image: "/assets/images/products/gypsum.png",
     capacity: "30,000 tons monthly",
     uses: "Construction, cement, and industrial processing.",
-    specs: ["SO3 43.50 - 46.00", "Purity up to 97.5%"],
+    specs: ["SO3 55.8%", "CaSO4 (Total) 94.86%", "Purity 96.3%"],
     tone: "mist"
   },
   {
@@ -306,7 +306,7 @@ export const previewIndustries = [
   {
     name: "Glass & Ceramics",
     icon: "flask",
-    description: "High-purity silica sand, feldspar, and dolomite are the backbone of flat glass, container glass, and ceramic tile production — Astro supplies each to specification.",
+    description: "High-purity silica sand, feldspar, and dolomite are the backbone of float glass, container glass, and ceramic tile production — Astro supplies each to specification.",
     minerals: ["Silica Sand", "Feldspar", "Dolomite", "Kaolin"]
   },
   {
