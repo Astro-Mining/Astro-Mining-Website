@@ -261,7 +261,7 @@ export const products = [
     image: "/assets/images/products/iron-oxides.png",
     capacity: "5,000 tons monthly",
     uses: "Pigments, ceramics, and industrial manufacturing.",
-    specs: ["Red hematite 55-65%", "Red hematite 75-80%"],
+    specs: ["Standard grade: Fe2O3 55–65%", "Premium grade: Fe2O3 75–80%"],
     tone: "rust"
   },
   {
@@ -283,22 +283,13 @@ export const products = [
     tone: "white"
   },
   {
-    name: "White Feldspar",
-    slug: "white-feldspar",
-    image: "/assets/images/products/white-feldspar.png",
-    capacity: "10,000 tons monthly",
-    uses: "High-grade ceramic and glass formulations.",
-    specs: ["K2O from 8-12%", "Fe2O3 from 0.4-0.8%"],
-    tone: "cream"
-  },
-  {
     name: "Limestone",
     slug: "limestone",
     image: "/assets/images/products/limestone.png",
     capacity: "20,000 tons monthly",
     uses: "Construction, cement, and chemical industries.",
     specs: ["CaCO3 > 95%", "Low impurity content"],
-    tone: "stone"
+    tone: "slate"
   },
   {
     name: "Talc",
@@ -307,7 +298,7 @@ export const products = [
     capacity: "3,000 tons monthly",
     uses: "Plastics, paints, paper, ceramics, and cosmetics.",
     specs: ["Whiteness > 92%", "MgO > 30%"],
-    tone: "chalk"
+    tone: "pearl"
   }
 ];
 

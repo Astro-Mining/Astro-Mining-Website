@@ -12,7 +12,8 @@ export default function HeroSection({ content }) {
         loop
         muted
         playsInline
-        preload="auto"
+        poster="/assets/images/company/quarry-excavator.jpeg"
+        preload="metadata"
       >
         <source src="/assets/video/hero-loop.mp4" type="video/mp4" />
       </video>

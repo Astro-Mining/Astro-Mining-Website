@@ -1,4 +1,5 @@
 const icons = {
+  check: <path d="M20 6 9 17l-5-5" />,
   arrowRight: <path d="M5 12h14M13 5l7 7-7 7" />,
   download: <path d="M12 3v12M7 10l5 5 5-5M5 21h14" />,
   plus: <path d="M12 5v14M5 12h14" />,

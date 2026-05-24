@@ -1,4 +1,4 @@
-import { partners, textOnlyPartners } from "@/data/siteContent";
+import { partners } from "@/data/siteContent";
 import InnerPageHero from "@/components/shared/InnerPageHero";
 import PartnersGrid from "@/components/sections/PartnersGrid";
 
@@ -16,7 +16,7 @@ export default function PartnersPage() {
         title="Our Partners"
         subtitle="Trusted by leading glass, ceramic, and industrial manufacturers across the globe."
       />
-      <PartnersGrid partners={partners} textPartners={textOnlyPartners} />
+      <PartnersGrid partners={partners} />
     </>
   );
 }

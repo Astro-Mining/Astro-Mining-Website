@@ -41,6 +41,7 @@ export default function GlobalReachSection({ countries, pins }) {
                   className={clsx(styles.countryButton, {
                     [styles.countryButtonActive]: activePin.country === country
                   })}
+                  onClick={() => setActivePin(pin)}
                   onFocus={() => setActivePin(pin)}
                   onMouseEnter={() => setActivePin(pin)}
                   type="button"
@@ -79,6 +80,7 @@ export default function GlobalReachSection({ countries, pins }) {
                   className={clsx(styles.pin, {
                     [styles.pinActive]: activePin.country === pin.country
                   })}
+                  onClick={() => setActivePin(pin)}
                   onFocus={() => setActivePin(pin)}
                   onMouseEnter={() => setActivePin(pin)}
                   style={getProjectedPosition(pin.latitude, pin.longitude)}
@@ -114,7 +116,7 @@ export default function GlobalReachSection({ countries, pins }) {
                 />
               </div>
               <div>
-                <p>Hover Preview</p>
+                <p>Export Destination</p>
                 <h3>{activePin.project}</h3>
                 <span>{activePin.country}</span>
               </div>

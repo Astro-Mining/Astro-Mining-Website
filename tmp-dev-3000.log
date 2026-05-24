@@ -1,0 +1,27 @@
+
+> astro-mining-and-industrial@1.0.0 dev
+> next dev
+
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.8:3000
+✓ Ready in 3.0s
+
+ GET / 200 in 873ms (next.js: 408ms, application-code: 465ms)
+✓ Compiled in 146ms
+✓ Compiled in 41ms
+✓ Compiled in 96ms
+✓ Compiled in 64ms
+✓ Compiled in 11ms
+✓ Compiled in 17ms
+✓ Compiled in 64ms
+✓ Compiled in 71ms
+✓ Compiled in 65ms
+✓ Compiled in 63ms
+✓ Compiled in 710ms
+✓ Compiled in 210ms
+✓ Compiled in 1136ms
+✓ Compiled in 11ms
+✓ Compiled in 25ms
+✓ Compiled in 796ms
+✓ Compiled in 2.4s

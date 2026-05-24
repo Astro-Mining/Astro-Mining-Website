@@ -4,7 +4,7 @@ import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
 import styles from "@/components/sections/WhyAstroSection.module.css";
 
-export default function WhyAstroSection({ stats }) {
+export default function WhyAstroSection({ stats, highlights }) {
   return (
     <section className={styles.section} id="why-astro">
       <div className={clsx(styles.shell, styles.grid)}>
@@ -14,6 +14,16 @@ export default function WhyAstroSection({ stats }) {
           <p className={styles.copy}>
             Astro emphasizes laboratory-backed quality control, production precision, and dependable quantities delivered within agreed deadlines.
           </p>
+          {highlights && highlights.length > 0 && (
+            <ul className={styles.highlights}>
+              {highlights.map((item) => (
+                <li key={item} className={styles.highlightItem}>
+                  <Icon name="check" size={15} className={styles.highlightIcon} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
           <a className={styles.cta} href="/contact">Learn More About Us</a>
         </Reveal>
         <div className={styles.stats}>

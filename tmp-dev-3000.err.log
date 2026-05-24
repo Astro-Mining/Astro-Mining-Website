@@ -1,0 +1,388 @@
+⚠ Slow filesystem detected. The benchmark took 1136ms. If E:\Freelance\Astro-Mining and Industrial\.next/dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+⨯ ./components/AstroHomepage.js:9:1
+Module not found: Can't resolve '@/components/sections/PartnersSection'
+  [90m 7 |[0m [36mimport[0m [33mHeroSection[0m [36mfrom[0m [32m"@/components/sections/HeroSection"[0m;
+  [90m 8 |[0m [36mimport[0m [33mIndustriesSection[0m [36mfrom[0m [32m"@/components/sections/IndustriesSection"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnersSection[0m [36mfrom[0m [32m"@/components/sections/PartnersSection"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mProductsSection[0m [36mfrom[0m [32m"@/components/sections/ProductsSection"[0m;
+  [90m11 |[0m [36mimport[0m [33mServicesSection[0m [36mfrom[0m [32m"@/components/sections/ServicesSection"[0m;
+  [90m12 |[0m [36mimport[0m [33mWhyAstroSection[0m [36mfrom[0m [32m"@/components/sections/WhyAstroSection"[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:9:1
+Module not found: Can't resolve '@/components/sections/PartnersSection'
+  [90m 7 |[0m [36mimport[0m [33mHeroSection[0m [36mfrom[0m [32m"@/components/sections/HeroSection"[0m;
+  [90m 8 |[0m [36mimport[0m [33mIndustriesSection[0m [36mfrom[0m [32m"@/components/sections/IndustriesSection"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnersSection[0m [36mfrom[0m [32m"@/components/sections/PartnersSection"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mProductsSection[0m [36mfrom[0m [32m"@/components/sections/ProductsSection"[0m;
+  [90m11 |[0m [36mimport[0m [33mServicesSection[0m [36mfrom[0m [32m"@/components/sections/ServicesSection"[0m;
+  [90m12 |[0m [36mimport[0m [33mWhyAstroSection[0m [36mfrom[0m [32m"@/components/sections/WhyAstroSection"[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:3:1
+Module not found: Can't resolve '@/components/layout/SiteFooter'
+  [90m1 |[0m [36mimport[0m { aboutContent, contactDetails, features, globalReach, heroContent, mapPins, navigat...
+  [90m2 |[0m [36mimport[0m [33mAboutSection[0m [36mfrom[0m [32m"@/components/sections/AboutSection"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m [33mSiteFooter[0m [36mfrom[0m [32m"@/components/layout/SiteFooter"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m [33mSiteHeader[0m [36mfrom[0m [32m"@/components/layout/SiteHeader"[0m;
+  [90m5 |[0m [36mimport[0m [33mFeatureStrip[0m [36mfrom[0m [32m"@/components/sections/FeatureStrip"[0m;
+  [90m6 |[0m [36mimport[0m [33mGlobalReachSection[0m [36mfrom[0m [32m"@/components/sections/GlobalReachSection"[0m;
+
+Import map: aliased to relative './components/layout/SiteFooter' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:3:1
+Module not found: Can't resolve '@/components/layout/SiteFooter'
+  [90m1 |[0m [36mimport[0m { aboutContent, contactDetails, features, globalReach, heroContent, mapPins, navigat...
+  [90m2 |[0m [36mimport[0m [33mAboutSection[0m [36mfrom[0m [32m"@/components/sections/AboutSection"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m [33mSiteFooter[0m [36mfrom[0m [32m"@/components/layout/SiteFooter"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m [33mSiteHeader[0m [36mfrom[0m [32m"@/components/layout/SiteHeader"[0m;
+  [90m5 |[0m [36mimport[0m [33mFeatureStrip[0m [36mfrom[0m [32m"@/components/sections/FeatureStrip"[0m;
+  [90m6 |[0m [36mimport[0m [33mGlobalReachSection[0m [36mfrom[0m [32m"@/components/sections/GlobalReachSection"[0m;
+
+Import map: aliased to relative './components/layout/SiteFooter' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:9:1
+Module not found: Can't resolve '@/components/sections/PartnersSection'
+  [90m 7 |[0m [36mimport[0m [33mHeroSection[0m [36mfrom[0m [32m"@/components/sections/HeroSection"[0m;
+  [90m 8 |[0m [36mimport[0m [33mIndustriesSection[0m [36mfrom[0m [32m"@/components/sections/IndustriesSection"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnersSection[0m [36mfrom[0m [32m"@/components/sections/PartnersSection"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mProductsSection[0m [36mfrom[0m [32m"@/components/sections/ProductsSection"[0m;
+  [90m11 |[0m [36mimport[0m [33mServicesSection[0m [36mfrom[0m [32m"@/components/sections/ServicesSection"[0m;
+  [90m12 |[0m [36mimport[0m [33mWhyAstroSection[0m [36mfrom[0m [32m"@/components/sections/WhyAstroSection"[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:9:1
+Module not found: Can't resolve '@/components/sections/PartnersSection'
+  [90m 7 |[0m [36mimport[0m [33mHeroSection[0m [36mfrom[0m [32m"@/components/sections/HeroSection"[0m;
+  [90m 8 |[0m [36mimport[0m [33mIndustriesSection[0m [36mfrom[0m [32m"@/components/sections/IndustriesSection"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnersSection[0m [36mfrom[0m [32m"@/components/sections/PartnersSection"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mProductsSection[0m [36mfrom[0m [32m"@/components/sections/ProductsSection"[0m;
+  [90m11 |[0m [36mimport[0m [33mServicesSection[0m [36mfrom[0m [32m"@/components/sections/ServicesSection"[0m;
+  [90m12 |[0m [36mimport[0m [33mWhyAstroSection[0m [36mfrom[0m [32m"@/components/sections/WhyAstroSection"[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/sections/PartnersSection.js:5:1
+Module not found: Can't resolve '@/components/sections/PartnersSection.module.css'
+  [90m3 |[0m [36mimport[0m { useEffect, useMemo, useRef, useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m styles [36mfrom[0m [32m"@/components/sections/PartnersSection.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m
+  [90m7 |[0m [36mconst[0m [33mAUTO_STEP_DELAY[0m = [35m4200[0m;
+  [90m8 |[0m
+
+Import map: aliased to relative './components/sections/PartnersSection.module.css' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/sections/PartnersSection.js
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/sections/PartnersSection.js:5:1
+Module not found: Can't resolve '@/components/sections/PartnersSection.module.css'
+  [90m3 |[0m [36mimport[0m { useEffect, useMemo, useRef, useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m styles [36mfrom[0m [32m"@/components/sections/PartnersSection.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m
+  [90m7 |[0m [36mconst[0m [33mAUTO_STEP_DELAY[0m = [35m4200[0m;
+  [90m8 |[0m
+
+Import map: aliased to relative './components/sections/PartnersSection.module.css' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/sections/PartnersSection.js
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/sections/PartnersSection.js:5:1
+Module not found: Can't resolve '@/components/sections/PartnersSection.module.css'
+  [90m3 |[0m [36mimport[0m { useEffect, useMemo, useRef, useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m styles [36mfrom[0m [32m"@/components/sections/PartnersSection.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m
+  [90m7 |[0m [36mconst[0m [33mAUTO_STEP_DELAY[0m = [35m4200[0m;
+  [90m8 |[0m
+
+Import map: aliased to relative './components/sections/PartnersSection.module.css' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/sections/PartnersSection.js
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/sections/PartnersSection.js:5:1
+Module not found: Can't resolve '@/components/sections/PartnersSection.module.css'
+  [90m3 |[0m [36mimport[0m { useEffect, useMemo, useRef, useState } [36mfrom[0m [32m"react"[0m;
+  [90m4 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m styles [36mfrom[0m [32m"@/components/sections/PartnersSection.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m
+  [90m7 |[0m [36mconst[0m [33mAUTO_STEP_DELAY[0m = [35m4200[0m;
+  [90m8 |[0m
+
+Import map: aliased to relative './components/sections/PartnersSection.module.css' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/sections/PartnersSection.js
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:9:1
+Module not found: Can't resolve '@/components/sections/PartnersSection'
+  [90m 7 |[0m [36mimport[0m [33mHeroSection[0m [36mfrom[0m [32m"@/components/sections/HeroSection"[0m;
+  [90m 8 |[0m [36mimport[0m [33mIndustriesSection[0m [36mfrom[0m [32m"@/components/sections/IndustriesSection"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnersSection[0m [36mfrom[0m [32m"@/components/sections/PartnersSection"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mProductsSection[0m [36mfrom[0m [32m"@/components/sections/ProductsSection"[0m;
+  [90m11 |[0m [36mimport[0m [33mServicesSection[0m [36mfrom[0m [32m"@/components/sections/ServicesSection"[0m;
+  [90m12 |[0m [36mimport[0m [33mWhyAstroSection[0m [36mfrom[0m [32m"@/components/sections/WhyAstroSection"[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:9:1
+Module not found: Can't resolve '@/components/sections/PartnersSection'
+  [90m 7 |[0m [36mimport[0m [33mHeroSection[0m [36mfrom[0m [32m"@/components/sections/HeroSection"[0m;
+  [90m 8 |[0m [36mimport[0m [33mIndustriesSection[0m [36mfrom[0m [32m"@/components/sections/IndustriesSection"[0m;
+[31m[1m>[0m [90m 9 |[0m [36mimport[0m [33mPartnersSection[0m [36mfrom[0m [32m"@/components/sections/PartnersSection"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m10 |[0m [36mimport[0m [33mProductsSection[0m [36mfrom[0m [32m"@/components/sections/ProductsSection"[0m;
+  [90m11 |[0m [36mimport[0m [33mServicesSection[0m [36mfrom[0m [32m"@/components/sections/ServicesSection"[0m;
+  [90m12 |[0m [36mimport[0m [33mWhyAstroSection[0m [36mfrom[0m [32m"@/components/sections/WhyAstroSection"[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/sections/PartnersSection.js:6:1
+Module not found: Can't resolve '@/components/sections/PartnersSection.module.css'
+  [90m4 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+  [90m5 |[0m [36mimport[0m [33mIcon[0m [36mfrom[0m [32m"@/components/shared/Icon"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m styles [36mfrom[0m [32m"@/components/sections/PartnersSection.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m
+  [90m8 |[0m [36mconst[0m [33mAUTO_STEP_DELAY[0m = [35m4200[0m;
+  [90m9 |[0m [36mconst[0m [33mRESET_DELAY[0m = [35m520[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection.module.css' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/sections/PartnersSection.js
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/sections/PartnersSection.js:6:1
+Module not found: Can't resolve '@/components/sections/PartnersSection.module.css'
+  [90m4 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+  [90m5 |[0m [36mimport[0m [33mIcon[0m [36mfrom[0m [32m"@/components/shared/Icon"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m styles [36mfrom[0m [32m"@/components/sections/PartnersSection.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m
+  [90m8 |[0m [36mconst[0m [33mAUTO_STEP_DELAY[0m = [35m4200[0m;
+  [90m9 |[0m [36mconst[0m [33mRESET_DELAY[0m = [35m520[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection.module.css' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/sections/PartnersSection.js
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/sections/PartnersSection.js:6:1
+Module not found: Can't resolve '@/components/sections/PartnersSection.module.css'
+  [90m4 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+  [90m5 |[0m [36mimport[0m [33mIcon[0m [36mfrom[0m [32m"@/components/shared/Icon"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m styles [36mfrom[0m [32m"@/components/sections/PartnersSection.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m
+  [90m8 |[0m [36mconst[0m [33mAUTO_STEP_DELAY[0m = [35m4200[0m;
+  [90m9 |[0m [36mconst[0m [33mRESET_DELAY[0m = [35m520[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection.module.css' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/sections/PartnersSection.js
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/sections/PartnersSection.js:6:1
+Module not found: Can't resolve '@/components/sections/PartnersSection.module.css'
+  [90m4 |[0m [36mimport[0m [33mImage[0m [36mfrom[0m [32m"next/image"[0m;
+  [90m5 |[0m [36mimport[0m [33mIcon[0m [36mfrom[0m [32m"@/components/shared/Icon"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m styles [36mfrom[0m [32m"@/components/sections/PartnersSection.module.css"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m
+  [90m8 |[0m [36mconst[0m [33mAUTO_STEP_DELAY[0m = [35m4200[0m;
+  [90m9 |[0m [36mconst[0m [33mRESET_DELAY[0m = [35m520[0m;
+
+Import map: aliased to relative './components/sections/PartnersSection.module.css' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/sections/PartnersSection.js
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:4:1
+Module not found: Can't resolve '@/components/sections/CompanyStorySection'
+  [90m2 |[0m [36mimport[0m [33mSiteFooter[0m [36mfrom[0m [32m"@/components/layout/SiteFooter"[0m;
+  [90m3 |[0m [36mimport[0m [33mSiteHeader[0m [36mfrom[0m [32m"@/components/layout/SiteHeader"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mCompanyStorySection[0m [36mfrom[0m [32m"@/components/sections/CompanyStorySection"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m [33mFeatureStrip[0m [36mfrom[0m [32m"@/components/sections/FeatureStrip"[0m;
+  [90m6 |[0m [36mimport[0m [33mGlobalReachSection[0m [36mfrom[0m [32m"@/components/sections/GlobalReachSection"[0m;
+  [90m7 |[0m [36mimport[0m [33mHeroSection[0m [36mfrom[0m [32m"@/components/sections/HeroSection"[0m;
+
+Import map: aliased to relative './components/sections/CompanyStorySection' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./components/AstroHomepage.js:4:1
+Module not found: Can't resolve '@/components/sections/CompanyStorySection'
+  [90m2 |[0m [36mimport[0m [33mSiteFooter[0m [36mfrom[0m [32m"@/components/layout/SiteFooter"[0m;
+  [90m3 |[0m [36mimport[0m [33mSiteHeader[0m [36mfrom[0m [32m"@/components/layout/SiteHeader"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mCompanyStorySection[0m [36mfrom[0m [32m"@/components/sections/CompanyStorySection"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m [33mFeatureStrip[0m [36mfrom[0m [32m"@/components/sections/FeatureStrip"[0m;
+  [90m6 |[0m [36mimport[0m [33mGlobalReachSection[0m [36mfrom[0m [32m"@/components/sections/GlobalReachSection"[0m;
+  [90m7 |[0m [36mimport[0m [33mHeroSection[0m [36mfrom[0m [32m"@/components/sections/HeroSection"[0m;
+
+Import map: aliased to relative './components/sections/CompanyStorySection' inside of [project]/
+
+
+Import trace:
+  Server Component:
+    ./components/AstroHomepage.js
+    ./app/page.js
+
+https://nextjs.org/docs/messages/module-not-found
+
+

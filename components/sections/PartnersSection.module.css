@@ -84,6 +84,7 @@
 
 .logo {
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .logoSphinx {

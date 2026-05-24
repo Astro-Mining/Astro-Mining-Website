@@ -4,6 +4,12 @@
   background: var(--color-steel-100);
 }
 
+@media (max-width: 640px) {
+  .mapWrap {
+    height: 260px;
+  }
+}
+
 .map {
   display: block;
   width: 100%;
