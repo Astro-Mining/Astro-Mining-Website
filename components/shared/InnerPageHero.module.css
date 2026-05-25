@@ -43,7 +43,7 @@
   }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 800px) {
   .hero {
     padding: 8.5rem 0 2rem;
   }
@@ -60,7 +60,7 @@
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 620px) {
   .hero {
     padding: 8rem 0 1.25rem;
   }
