@@ -144,7 +144,7 @@
   margin: 0;
   color: var(--color-ink-900);
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(1.5rem, min(3.2vh, 3vw), 3rem);
+  font-size: clamp(1.75rem, min(3.6vh, 3vw), 3rem);
   line-height: 0.98;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -153,8 +153,8 @@
 .stepCopy,
 .stepDetail {
   margin: 0;
-  font-size: clamp(0.85rem, 1.6vh, 1rem);
-  line-height: clamp(1.5, 1.8, 1.82);
+  font-size: clamp(0.92rem, 1.8vh, 1rem);
+  line-height: 1.75;
 }
 
 .stepCopy {
@@ -174,12 +174,12 @@
 .chip {
   display: inline-flex;
   align-items: center;
-  padding: clamp(0.4rem, 1vh, 0.75rem) clamp(0.6rem, 1.4vh, 1rem);
+  padding: clamp(0.5rem, 1.1vh, 0.75rem) clamp(0.75rem, 1.5vh, 1rem);
   border: 1px solid rgba(17, 24, 39, 0.1);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.92);
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(0.78rem, 1.4vh, 0.92rem);
+  font-size: clamp(0.82rem, 1.5vh, 0.92rem);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
