@@ -89,6 +89,10 @@
   mix-blend-mode: multiply;
 }
 
+.logoFrameMedium {
+  height: 4rem;
+}
+
 .logoFrameLarge {
   height: 5rem;
 }
@@ -111,6 +115,10 @@
 
   .logoFrame {
     height: 3rem;
+  }
+
+  .logoFrameMedium {
+    height: 3.5rem;
   }
 
   .logoFrameLarge {
@@ -152,6 +160,10 @@
 
   .logoFrame {
     height: 2.65rem;
+  }
+
+  .logoFrameMedium {
+    height: 3rem;
   }
 
   .logoFrameLarge {

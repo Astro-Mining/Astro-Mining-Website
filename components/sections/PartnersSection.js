@@ -15,6 +15,8 @@ export default function PartnersSection({ partners }) {
         <div className={styles.grid} role="list" aria-label="Key clients">
           {partners.map((partner, index) => {
             const isSmall = partner.name === "Kandil Glass" || partner.name === "Pasabahce";
+            const isLarge = partner.name === "Duravit" || partner.name === "Sphinx Glass" || partner.name === "Beam";
+            const frameClass = isSmall ? null : isLarge ? styles.logoFrameLarge : styles.logoFrameMedium;
             return (
               <Reveal
                 className={styles.clientCard}
@@ -24,7 +26,7 @@ export default function PartnersSection({ partners }) {
                 key={partner.name}
               >
                 <article className={styles.cardInner} role="listitem">
-                  <div className={clsx(styles.logoFrame, !isSmall && styles.logoFrameLarge)}>
+                  <div className={clsx(styles.logoFrame, frameClass)}>
                     <Image
                       alt={partner.alt}
                       className={styles.logo}
