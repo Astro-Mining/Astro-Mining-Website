@@ -104,7 +104,7 @@
 .progress {
   display: flex;
   gap: 0.55rem;
-  margin: 1.5rem 0 1.2rem;
+  margin: clamp(0.6rem, 2vh, 1.5rem) 0 clamp(0.55rem, 1.6vh, 1.2rem);
 }
 
 .progressDot {
@@ -124,12 +124,12 @@
 
 .activePanel {
   position: relative;
-  min-height: 28rem;
+  min-height: min(28rem, 38dvh);
 }
 
 .activePanelInner {
   display: grid;
-  gap: 1rem;
+  gap: clamp(0.5rem, 1.6vh, 1rem);
 }
 
 .stepLabel {
@@ -144,7 +144,7 @@
   margin: 0;
   color: var(--color-ink-900);
   font-family: var(--font-heading), sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, min(3.2vh, 3vw), 3rem);
   line-height: 0.98;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -153,7 +153,8 @@
 .stepCopy,
 .stepDetail {
   margin: 0;
-  line-height: 1.82;
+  font-size: clamp(0.85rem, 1.6vh, 1rem);
+  line-height: clamp(1.5, 1.8, 1.82);
 }
 
 .stepCopy {
@@ -167,25 +168,25 @@
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: clamp(0.4rem, 1vh, 0.7rem);
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  padding: 0.75rem 1rem;
+  padding: clamp(0.4rem, 1vh, 0.75rem) clamp(0.6rem, 1.4vh, 1rem);
   border: 1px solid rgba(17, 24, 39, 0.1);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.92);
   font-family: var(--font-heading), sans-serif;
-  font-size: 0.92rem;
+  font-size: clamp(0.78rem, 1.4vh, 0.92rem);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .bullets {
   display: grid;
-  gap: 0.85rem;
+  gap: clamp(0.45rem, 1.2vh, 0.85rem);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -195,7 +196,7 @@
   position: relative;
   padding-left: 1.35rem;
   color: var(--color-ink-800);
-  line-height: 1.75;
+  line-height: clamp(1.5, 1.75, 1.75);
 }
 
 .bullets li::before {
@@ -255,38 +256,6 @@
   height: 40rem;
 }
 
-@media (max-height: 800px) {
-  .activePanel {
-    min-height: 0;
-  }
-  .activePanelInner {
-    gap: 0.55rem;
-  }
-  .stepTitle {
-    font-size: clamp(1.4rem, 2.2vw, 2rem);
-  }
-  .stepCopy,
-  .stepDetail {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  .chips {
-    gap: 0.45rem;
-  }
-  .chip {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.8rem;
-  }
-  .bullets {
-    gap: 0.5rem;
-  }
-  .bullets li {
-    line-height: 1.5;
-  }
-  .progress {
-    margin: 0.6rem 0 0.6rem;
-  }
-}
 
 @media (max-width: 980px) {
   .section {
