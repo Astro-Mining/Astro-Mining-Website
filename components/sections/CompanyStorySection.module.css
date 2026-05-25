@@ -255,6 +255,39 @@
   height: 40rem;
 }
 
+@media (max-height: 800px) {
+  .activePanel {
+    min-height: 0;
+  }
+  .activePanelInner {
+    gap: 0.55rem;
+  }
+  .stepTitle {
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+  }
+  .stepCopy,
+  .stepDetail {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .chips {
+    gap: 0.45rem;
+  }
+  .chip {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+  }
+  .bullets {
+    gap: 0.5rem;
+  }
+  .bullets li {
+    line-height: 1.5;
+  }
+  .progress {
+    margin: 0.6rem 0 0.6rem;
+  }
+}
+
 @media (max-width: 980px) {
   .section {
     padding: 0 0 5.25rem;
