@@ -65,6 +65,7 @@
   border-radius: 0.9rem;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 10px 22px rgba(17, 24, 39, 0.05);
+  overflow: hidden;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
