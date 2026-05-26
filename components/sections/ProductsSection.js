@@ -5,9 +5,21 @@ import Image from "next/image";
 import clsx from "clsx";
 import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
+import { useLang } from "@/context/LanguageContext";
+import { ui as arUi } from "@/data/ar";
 import styles from "@/components/sections/ProductsSection.module.css";
 
 export default function ProductsSection({ products, compact = false }) {
+  const { lang } = useLang();
+  const t = lang === "ar" ? arUi.productsSection : {
+    eyebrow: "Our Products",
+    title: "Pure minerals. Powering industries.",
+    copy: "Astro supplies a focused portfolio of industrial minerals for glass, ceramics, chemicals, construction, paints, plastics, and more.",
+    viewDetails: "View Details",
+    capacity: "Capacity",
+    specifications: "Specifications",
+    requestQuote: "Request a Quote"
+  };
   const [activeSlug, setActiveSlug] = useState(products[0]?.slug);
   const [modalProduct, setModalProduct] = useState(null);
 
@@ -30,11 +42,9 @@ export default function ProductsSection({ products, compact = false }) {
       <div className={styles.blendTop} aria-hidden="true" />
       <div className={clsx(styles.inner, { [styles.compact]: compact })}>
         <Reveal className={styles.heading} direction="left" distance={36}>
-          <span className="eyebrow">Our Products</span>
-          <h2 className="section-title">Pure minerals. Powering industries.</h2>
-          <p className="section-copy">
-            Astro supplies a focused portfolio of industrial minerals for glass, ceramics, chemicals, construction, paints, plastics, and more.
-          </p>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="section-title">{t.title}</h2>
+          <p className="section-copy">{t.copy}</p>
         </Reveal>
         <div className={styles.grid}>
           {products.map((product) => {
@@ -83,7 +93,7 @@ export default function ProductsSection({ products, compact = false }) {
                       onClick={(e) => { e.stopPropagation(); setModalProduct(product); }}
                       type="button"
                     >
-                      View Details
+                      {t.viewDetails}
                     </button>
                   </div>
                 </article>
@@ -126,19 +136,19 @@ export default function ProductsSection({ products, compact = false }) {
               <p className={styles.modalUses}>{modalProduct.uses}</p>
               <div className={styles.modalMeta}>
                 <div className={styles.modalMetaItem}>
-                  <span>Capacity</span>
+                  <span>{t.capacity}</span>
                   <strong>{modalProduct.capacity}</strong>
                 </div>
               </div>
               <div className={styles.modalSpecs}>
-                <h4>Specifications</h4>
+                <h4>{t.specifications}</h4>
                 <ul>
                   {modalProduct.specs.map((spec) => (
                     <li key={spec}>{spec}</li>
                   ))}
                 </ul>
               </div>
-              <a className={styles.modalCta} href="/contact">Request a Quote</a>
+              <a className={styles.modalCta} href="/contact">{t.requestQuote}</a>
             </div>
           </div>
         </div>

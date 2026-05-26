@@ -25,7 +25,7 @@ export default function AstroHomepage() {
       <IndustriesSection industries={d.previewIndustries} />
       <WhyAstroSection highlights={d.qualityHighlights} stats={d.stats} />
       <PartnersSection partners={en.partners} />
-      <GlobalReachSection countries={d.globalReach} pins={d.mapPins} />
+      <GlobalReachSection key={lang} countries={d.globalReach} pins={d.mapPins} />
     </>
   );
 }

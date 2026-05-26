@@ -9,6 +9,7 @@ export default function LocalizedGlobalReach() {
   const { lang } = useLang();
   return (
     <GlobalReachSection
+      key={lang}
       countries={lang === "ar" ? arReach : enReach}
       pins={lang === "ar" ? arPins : enPins}
     />

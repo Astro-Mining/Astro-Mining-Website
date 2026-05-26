@@ -1,10 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import clsx from "clsx";
 import ButtonLink from "@/components/shared/ButtonLink";
 import Reveal from "@/components/shared/Reveal";
+import { useLang } from "@/context/LanguageContext";
+import { ui as arUi } from "@/data/ar";
 import styles from "@/components/sections/PartnersGrid.module.css";
 
 export default function PartnersGrid({ partners, textPartners }) {
+  const { lang } = useLang();
+  const t = lang === "ar" ? arUi.partnersGrid : {
+    eyebrow: "Key Clients",
+    title: "Trusted by industry leaders",
+    copy: "Astro supplies premium industrial minerals to leading glass, ceramic, and manufacturing companies across the globe.",
+    becomePartner: "Become a Partner"
+  };
+
   const allPartners = [
     ...partners.map((p) => ({ ...p, isLogo: true })),
     ...(textPartners || []).map((p) => ({ ...p, isLogo: false }))
@@ -14,12 +26,9 @@ export default function PartnersGrid({ partners, textPartners }) {
     <section className={clsx("section", styles.section)}>
       <div className="container">
         <Reveal direction="up" distance={30}>
-          <span className="eyebrow">Key Clients</span>
-          <h2 className="section-title">Trusted by industry leaders</h2>
-          <p className={clsx("section-copy", styles.intro)}>
-            Astro supplies premium industrial minerals to leading glass, ceramic, and
-            manufacturing companies across the globe.
-          </p>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="section-title">{t.title}</h2>
+          <p className={clsx("section-copy", styles.intro)}>{t.copy}</p>
         </Reveal>
 
         <div className={styles.grid}>
@@ -54,7 +63,7 @@ export default function PartnersGrid({ partners, textPartners }) {
 
         <Reveal direction="up" distance={24} delay={0.2}>
           <div className={styles.cta}>
-            <ButtonLink href="/contact">Become a Partner</ButtonLink>
+            <ButtonLink href="/contact">{t.becomePartner}</ButtonLink>
           </div>
         </Reveal>
       </div>

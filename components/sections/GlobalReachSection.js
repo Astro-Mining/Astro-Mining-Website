@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useState } from "react";
 import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
+import { useLang } from "@/context/LanguageContext";
+import { ui as arUi } from "@/data/ar";
 import styles from "@/components/sections/GlobalReachSection.module.css";
 
 function getProjectedPosition(latitude, longitude) {
@@ -22,6 +24,12 @@ function getPinByCountry(country, pins) {
 }
 
 export default function GlobalReachSection({ countries, pins }) {
+  const { lang } = useLang();
+  const t = lang === "ar" ? arUi.globalReach : {
+    eyebrow: "Our Global Reach",
+    title: "Exporting to many countries worldwide",
+    exportDestination: "Export Destination"
+  };
   const [activePin, setActivePin] = useState(pins[0]);
 
   return (
@@ -29,8 +37,8 @@ export default function GlobalReachSection({ countries, pins }) {
       <div className={styles.blendTop} aria-hidden="true" />
       <div className={clsx("container", styles.grid)}>
         <Reveal direction="left" distance={38}>
-          <span className="eyebrow">Our Global Reach</span>
-          <h2 className="section-title">Exporting to many countries worldwide</h2>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="section-title">{t.title}</h2>
           <div className={styles.countryGrid}>
             {countries.map((country) => {
               const pin = getPinByCountry(country, pins);
@@ -116,7 +124,7 @@ export default function GlobalReachSection({ countries, pins }) {
                 />
               </div>
               <div>
-                <p>Export Destination</p>
+                <p>{t.exportDestination}</p>
                 <h3>{activePin.project}</h3>
                 <span>{activePin.country}</span>
               </div>
