@@ -17,6 +17,18 @@ export default function PartnersGrid({ partners, textPartners }) {
     becomePartner: "Become a Partner"
   };
 
+  const scaleMap = {
+    "Sphinx Glass":  1.92,
+    "Duravit":       1.75,
+    "Beam":          1.75,
+    "Galaxy":        1.55,
+    "Saint-Gobain":  1.35,
+    "Crystal Glass": 1.2,
+    "Mega Glass":    1.2,
+    "Cedar":         1.2,
+    "Sisecam":       1.2,
+  };
+
   const allPartners = [
     ...partners.map((p) => ({ ...p, isLogo: true })),
     ...(textPartners || []).map((p) => ({ ...p, isLogo: false }))
@@ -48,6 +60,7 @@ export default function PartnersGrid({ partners, textPartners }) {
                       fill
                       sizes="(max-width: 640px) 42vw, (max-width: 980px) 28vw, 18vw"
                       src={partner.logo}
+                      style={{ transform: `scale(${scaleMap[partner.name] ?? 1})` }}
                     />
                   </div>
                 </div>
