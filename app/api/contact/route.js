@@ -11,7 +11,7 @@ export async function POST(request) {
 
     await resend.emails.send({
       from: "Astro Mining Contact Form <no-reply@astromining-industrial.com>",
-      to: ["youssef.elroube123@gmail.com"],
+      to: ["Sales@astromining-industrial.com"],
       replyTo: email,
       subject: `New Inquiry from ${firstName} ${lastName}`,
       html: `
