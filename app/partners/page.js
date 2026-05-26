@@ -15,6 +15,7 @@ export default function PartnersPage() {
         crumb="Key Clients"
         title="Our Partners"
         subtitle="Trusted by leading glass, ceramic, and industrial manufacturers across the globe."
+        ar={{ crumb: "عملاؤنا الرئيسيون", title: "شركاؤنا", subtitle: "موثوق به من قِبل كبار مصنّعي الزجاج والسيراميك والصناعات المختلفة حول العالم." }}
       />
       <PartnersGrid partners={partners} />
     </>

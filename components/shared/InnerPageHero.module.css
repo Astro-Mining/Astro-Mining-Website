@@ -60,6 +60,28 @@
   }
 }
 
+/* RTL */
+:global([dir="rtl"]) .title {
+  font-family: var(--font-arabic), sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.2;
+}
+
+:global([dir="rtl"]) .crumb {
+  font-family: var(--font-arabic), sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+:global([dir="rtl"]) .subtitle {
+  font-family: var(--font-arabic), sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
 @media (max-height: 620px) {
   .hero {
     padding: 8rem 0 1.25rem;

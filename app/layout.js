@@ -1,5 +1,6 @@
 import { Cairo, Gantari } from "next/font/google";
 import "@/app/globals.css";
+import ClientProviders from "@/components/layout/ClientProviders";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import { navigation, contactDetails } from "@/data/siteContent";
@@ -66,9 +67,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${bodyFont.variable} ${headingFont.variable} ${arabicFont.variable}`}>
-        <SiteHeader navigation={navigation} />
-        <main>{children}</main>
-        <SiteFooter navigation={navigation} contact={contactDetails} />
+        <ClientProviders>
+          <SiteHeader navigation={navigation} />
+          <main>{children}</main>
+          <SiteFooter navigation={navigation} contact={contactDetails} />
+        </ClientProviders>
       </body>
     </html>
   );

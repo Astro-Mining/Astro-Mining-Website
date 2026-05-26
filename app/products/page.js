@@ -1,6 +1,5 @@
-import { products } from "@/data/siteContent";
 import InnerPageHero from "@/components/shared/InnerPageHero";
-import ProductsSection from "@/components/sections/ProductsSection";
+import LocalizedProductsSection from "@/components/sections/LocalizedProductsSection";
 
 export const metadata = {
   title: "Our Products",
@@ -15,8 +14,9 @@ export default function ProductsPage() {
         crumb="What We Supply"
         title="Our Products"
         subtitle="Eight industrial-grade mineral categories, each precision-processed and export-ready from Egypt."
+        ar={{ crumb: "ما نوفره", title: "منتجاتنا", subtitle: "تسع فئات معدنية بمواصفات صناعية، مُعالَجة بدقة وجاهزة للتصدير من مصر." }}
       />
-      <ProductsSection products={products} />
+      <LocalizedProductsSection />
     </>
   );
 }

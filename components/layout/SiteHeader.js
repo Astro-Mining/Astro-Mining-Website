@@ -7,12 +7,19 @@ import clsx from "clsx";
 import Logo from "@/components/shared/Logo";
 import Icon from "@/components/shared/Icon";
 import ButtonLink from "@/components/shared/ButtonLink";
+import { useLang } from "@/context/LanguageContext";
+import * as en from "@/data/siteContent";
+import * as ar from "@/data/ar";
 import styles from "@/components/layout/SiteHeader.module.css";
 
-export default function SiteHeader({ navigation }) {
+export default function SiteHeader({ navigation: _nav }) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { lang, setLang } = useLang();
+
+  const nav = lang === "ar" ? ar.navigation : en.navigation;
+  const getQuote = lang === "ar" ? ar.ui.header.getQuote : "Get A Quote";
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -38,9 +45,9 @@ export default function SiteHeader({ navigation }) {
           <Logo key={logoVariant} size="large" variant={logoVariant} />
         </div>
         <nav className={styles.desktopNav} aria-label="Primary navigation">
-          {navigation.map((item) => (
+          {nav.map((item) => (
             <Link
-              key={item.label}
+              key={item.href}
               className={clsx(styles.link, {
                 [styles.active]: pathname === item.href
               })}
@@ -51,8 +58,16 @@ export default function SiteHeader({ navigation }) {
           ))}
         </nav>
         <div className={styles.actions}>
+          <button
+            aria-label={lang === "ar" ? "Switch to English" : "التبديل إلى العربية"}
+            className={styles.langToggle}
+            onClick={() => setLang(lang === "ar" ? "en" : "ar")}
+            type="button"
+          >
+            {lang === "ar" ? "EN" : "عربي"}
+          </button>
           <div className={styles.desktopCta}>
-            <ButtonLink href="/contact">Get A Quote</ButtonLink>
+            <ButtonLink href="/contact">{getQuote}</ButtonLink>
           </div>
           <button
             aria-expanded={isOpen}
@@ -76,9 +91,9 @@ export default function SiteHeader({ navigation }) {
       />
       <div className={clsx(styles.mobilePanel, { [styles.mobilePanelOpen]: isOpen })}>
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
-          {navigation.map((item) => (
+          {nav.map((item) => (
             <Link
-              key={item.label}
+              key={item.href}
               href={item.href}
               className={clsx(styles.mobileLink, {
                 [styles.mobileLinkActive]: pathname === item.href
@@ -88,7 +103,14 @@ export default function SiteHeader({ navigation }) {
               {item.label}
             </Link>
           ))}
-          <ButtonLink href="/contact">Get A Quote</ButtonLink>
+          <ButtonLink href="/contact">{getQuote}</ButtonLink>
+          <button
+            className={styles.mobileLangToggle}
+            onClick={() => { setLang(lang === "ar" ? "en" : "ar"); setIsOpen(false); }}
+            type="button"
+          >
+            {lang === "ar" ? "Switch to English" : "التبديل إلى العربية"}
+          </button>
         </nav>
       </div>
     </header>

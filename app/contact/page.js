@@ -16,6 +16,7 @@ export default function ContactPage() {
         crumb="Get In Touch"
         title="Contact Us"
         subtitle="Discuss your material requirements, request a quote, or reach our team directly."
+        ar={{ crumb: "ابقَ على تواصل", title: "تواصل معنا", subtitle: "ناقش متطلباتك من المواد أو اطلب عرض سعر أو تواصل مع فريقنا مباشرة." }}
       />
       <ContactSection contact={contactDetails} />
       <div className={styles.mapWrap}>

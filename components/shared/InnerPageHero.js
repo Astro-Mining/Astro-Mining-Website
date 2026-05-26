@@ -1,12 +1,18 @@
+"use client";
+
+import { useLang } from "@/context/LanguageContext";
 import styles from "@/components/shared/InnerPageHero.module.css";
 
-export default function InnerPageHero({ title, subtitle, crumb }) {
+export default function InnerPageHero({ title, subtitle, crumb, ar }) {
+  const { lang } = useLang();
+  const display = (lang === "ar" && ar) ? ar : { title, subtitle, crumb };
+
   return (
     <section className={styles.hero}>
       <div className={`container ${styles.inner}`}>
-        {crumb && <p className={styles.crumb}>{crumb}</p>}
-        <h1 className={styles.title}>{title}</h1>
-        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+        {display.crumb && <p className={styles.crumb}>{display.crumb}</p>}
+        <h1 className={styles.title}>{display.title}</h1>
+        {display.subtitle && <p className={styles.subtitle}>{display.subtitle}</p>}
       </div>
     </section>
   );

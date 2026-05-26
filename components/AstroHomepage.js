@@ -1,4 +1,8 @@
-import { companyStoryContent, features, globalReach, heroContent, mapPins, partners, previewIndustries, products, qualityHighlights, stats } from "@/data/siteContent";
+"use client";
+
+import { useLang } from "@/context/LanguageContext";
+import * as en from "@/data/siteContent";
+import * as ar from "@/data/ar";
 import CompanyStorySection from "@/components/sections/CompanyStorySection";
 import FeatureStrip from "@/components/sections/FeatureStrip";
 import GlobalReachSection from "@/components/sections/GlobalReachSection";
@@ -9,16 +13,19 @@ import ProductsSection from "@/components/sections/ProductsSection";
 import WhyAstroSection from "@/components/sections/WhyAstroSection";
 
 export default function AstroHomepage() {
+  const { lang } = useLang();
+  const d = lang === "ar" ? ar : en;
+
   return (
     <>
-      <HeroSection content={heroContent} />
-      <FeatureStrip items={features} />
-      <CompanyStorySection content={companyStoryContent} />
-      <ProductsSection products={products} />
-      <IndustriesSection industries={previewIndustries} />
-      <WhyAstroSection highlights={qualityHighlights} stats={stats} />
-      <PartnersSection partners={partners} />
-      <GlobalReachSection countries={globalReach} pins={mapPins} />
+      <HeroSection content={d.heroContent} />
+      <FeatureStrip items={d.features} />
+      <CompanyStorySection content={d.companyStoryContent} />
+      <ProductsSection products={d.products} />
+      <IndustriesSection industries={d.previewIndustries} />
+      <WhyAstroSection highlights={d.qualityHighlights} stats={d.stats} />
+      <PartnersSection partners={en.partners} />
+      <GlobalReachSection countries={d.globalReach} pins={d.mapPins} />
     </>
   );
 }

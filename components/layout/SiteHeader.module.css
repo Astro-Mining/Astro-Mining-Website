@@ -122,6 +122,52 @@
   border-color: var(--color-orange-600);
 }
 
+.langToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.6rem;
+  height: 2rem;
+  padding: 0 0.6rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.langToggle:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: var(--color-white);
+}
+
+.homeAtTop .langToggle {
+  border-color: rgba(17, 24, 39, 0.28);
+  color: var(--color-ink-800);
+}
+
+.homeAtTop .langToggle:hover {
+  border-color: var(--color-orange-600);
+  color: var(--color-orange-600);
+}
+
+.mobileLangToggle {
+  padding: 0.6rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-steel-500);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  text-align: start;
+}
+
 /* Home page at top — nav links switch to dark so they're readable on the white hero panel */
 .homeAtTop .link {
   color: var(--color-ink-800);

@@ -1,6 +1,5 @@
-import { globalReach, mapPins } from "@/data/siteContent";
 import InnerPageHero from "@/components/shared/InnerPageHero";
-import GlobalReachSection from "@/components/sections/GlobalReachSection";
+import LocalizedGlobalReach from "@/components/sections/LocalizedGlobalReach";
 
 export const metadata = {
   title: "Export Markets",
@@ -15,8 +14,9 @@ export default function ExportsPage() {
         crumb="Global Supply"
         title="Export Markets"
         subtitle="Delivering Egyptian mineral excellence to industries across the Gulf, Africa, and Asia."
+        ar={{ crumb: "الإمداد العالمي", title: "أسواق التصدير", subtitle: "نوصل التميز المعدني المصري للصناعات في الخليج وأفريقيا وآسيا." }}
       />
-      <GlobalReachSection countries={globalReach} pins={mapPins} />
+      <LocalizedGlobalReach />
     </>
   );
 }

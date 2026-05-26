@@ -1,4 +1,3 @@
-import { services } from "@/data/siteContent";
 import InnerPageHero from "@/components/shared/InnerPageHero";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 
@@ -15,8 +14,9 @@ export default function ServicesPage() {
         crumb="What We Do"
         title="Our Services"
         subtitle="From geological exploration to refined, export-ready mineral supply — Astro handles the complete value chain."
+        ar={{ crumb: "ما نقدمه", title: "خدماتنا", subtitle: "من الاستكشاف الجيولوجي إلى التوريد المعدني الجاهز للتصدير — تتولى أسترو سلسلة القيمة الكاملة." }}
       />
-      <ServicesGrid services={services} />
+      <ServicesGrid />
     </>
   );
 }

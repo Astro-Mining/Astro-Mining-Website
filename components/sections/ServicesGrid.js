@@ -1,20 +1,30 @@
+"use client";
+
 import Image from "next/image";
 import clsx from "clsx";
 import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
+import { useLang } from "@/context/LanguageContext";
+import { services as arServices, ui as arUi } from "@/data/ar";
+import { services as enServices } from "@/data/siteContent";
 import styles from "@/components/sections/ServicesGrid.module.css";
 
-export default function ServicesGrid({ services }) {
+export default function ServicesGrid() {
+  const { lang } = useLang();
+  const services = lang === "ar" ? arServices : enServices;
+  const t = lang === "ar" ? arUi.servicesGrid : {
+    eyebrow: "What We Do",
+    title: "From quarry to industrial supply",
+    copy: "Astro covers the complete mineral value chain with proven field expertise, precise treatment processes, and dependable raw material delivery."
+  };
+
   return (
     <section className={clsx("section", styles.section)}>
       <div className="container">
         <Reveal direction="up" distance={32}>
-          <span className="eyebrow">What We Do</span>
-          <h2 className="section-title">From quarry to industrial supply</h2>
-          <p className={clsx("section-copy", styles.intro)}>
-            Astro covers the complete mineral value chain with proven field expertise,
-            precise treatment processes, and dependable raw material delivery.
-          </p>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="section-title">{t.title}</h2>
+          <p className={clsx("section-copy", styles.intro)}>{t.copy}</p>
         </Reveal>
 
         <div className={styles.grid}>

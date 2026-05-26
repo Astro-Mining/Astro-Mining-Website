@@ -1,19 +1,29 @@
+"use client";
+
 import clsx from "clsx";
 import AnimatedStatValue from "@/components/shared/AnimatedStatValue";
 import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
+import { useLang } from "@/context/LanguageContext";
+import { ui as arUi } from "@/data/ar";
 import styles from "@/components/sections/WhyAstroSection.module.css";
 
 export default function WhyAstroSection({ stats, highlights }) {
+  const { lang } = useLang();
+  const t = lang === "ar" ? arUi.whyAstro : {
+    eyebrow: "Why Astro",
+    title: "Commitment to quality and reliability",
+    copy: "Astro emphasizes laboratory-backed quality control, production precision, and dependable quantities delivered within agreed deadlines.",
+    cta: "Learn More About Us"
+  };
+
   return (
     <section className={styles.section} id="why-astro">
       <div className={clsx(styles.shell, styles.grid)}>
         <Reveal className={styles.intro} direction="left" distance={42}>
-          <span className="eyebrow">Why Astro</span>
-          <h2 className="section-title">Commitment to quality and reliability</h2>
-          <p className={styles.copy}>
-            Astro emphasizes laboratory-backed quality control, production precision, and dependable quantities delivered within agreed deadlines.
-          </p>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2 className="section-title">{t.title}</h2>
+          <p className={styles.copy}>{t.copy}</p>
           {highlights && highlights.length > 0 && (
             <ul className={styles.highlights}>
               {highlights.map((item) => (
@@ -24,7 +34,7 @@ export default function WhyAstroSection({ stats, highlights }) {
               ))}
             </ul>
           )}
-          <a className={styles.cta} href="/contact">Learn More About Us</a>
+          <a className={styles.cta} href="/contact">{t.cta}</a>
         </Reveal>
         <div className={styles.stats}>
           {stats.map((stat, index) => (

@@ -1,7 +1,5 @@
-import { companyStoryContent, qualityHighlights, stats } from "@/data/siteContent";
 import InnerPageHero from "@/components/shared/InnerPageHero";
-import CompanyStorySection from "@/components/sections/CompanyStorySection";
-import WhyAstroSection from "@/components/sections/WhyAstroSection";
+import LocalizedAboutContent from "@/components/sections/LocalizedAboutContent";
 
 export const metadata = {
   title: "About Us",
@@ -16,9 +14,9 @@ export default function AboutPage() {
         crumb="Who We Are"
         title="About Astro"
         subtitle="A forward-thinking Egyptian mining company delivering premium industrial minerals to local and global markets."
+        ar={{ crumb: "من نحن", title: "عن أسترو", subtitle: "شركة تعدين مصرية تطلعية توفر معادن صناعية متميزة للأسواق المحلية والعالمية." }}
       />
-      <CompanyStorySection content={companyStoryContent} />
-      <WhyAstroSection highlights={qualityHighlights} stats={stats} />
+      <LocalizedAboutContent />
     </>
   );
 }
