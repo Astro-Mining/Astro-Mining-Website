@@ -246,6 +246,10 @@
 }
 
 @media (max-width: 980px) {
+  .video {
+    transform: none;
+  }
+
   .leftSlab {
     left: -17%;
     width: 89%;
