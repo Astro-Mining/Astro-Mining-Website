@@ -15,6 +15,7 @@ export default function HeroSection({ content }) {
         poster="/assets/images/company/quarry-excavator.jpeg"
         preload="metadata"
       >
+        <source src="/assets/video/hero-loop.webm" type="video/webm" />
         <source src="/assets/video/hero-loop.mp4" type="video/mp4" />
       </video>
       <div className={styles.rightTint} />
