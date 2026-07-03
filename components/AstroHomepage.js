@@ -4,7 +4,6 @@ import { useLang } from "@/context/LanguageContext";
 import * as en from "@/data/siteContent";
 import * as ar from "@/data/ar";
 import CompanyStorySection from "@/components/sections/CompanyStorySection";
-import EventBannerSection from "@/components/sections/EventBannerSection";
 import FeatureStrip from "@/components/sections/FeatureStrip";
 import GlobalReachSection from "@/components/sections/GlobalReachSection";
 import HeroSection from "@/components/sections/HeroSection";
@@ -20,7 +19,6 @@ export default function AstroHomepage() {
   return (
     <>
       <HeroSection content={d.heroContent} />
-      <EventBannerSection />
       <FeatureStrip items={d.features} />
       <CompanyStorySection content={d.companyStoryContent} />
       <ProductsSection products={d.products} />
