@@ -1,13 +1,18 @@
 .wrap {
   position: fixed;
-  right: 24px;
+  left: 50%;
   bottom: 24px;
   z-index: 60;
   width: 728px;
   max-width: calc(100vw - 48px);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-soft);
-  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: bottom center;
+  transform: translateX(-50%) translateY(0) scale(1);
+  will-change: transform, opacity;
+  /* Appear: springy "pop" out (mac genie feel) */
+  transition: transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 240ms ease-out;
 }
 
 .banner {
@@ -47,7 +52,7 @@
 /* Collapsed floating circle */
 .reopen {
   position: fixed;
-  right: 24px;
+  left: 50%;
   bottom: 24px;
   z-index: 60;
   display: grid;
@@ -61,31 +66,37 @@
   border-radius: 50%;
   box-shadow: var(--shadow-soft);
   cursor: pointer;
-  transition: transform var(--transition), background var(--transition);
+  transform-origin: bottom center;
+  transform: translateX(-50%) translateY(0) scale(1);
+  will-change: transform, opacity;
+  transition: transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 240ms ease-out, background var(--transition);
 }
 
 .reopen:hover {
-  transform: scale(1.06);
   background: var(--color-orange-700);
 }
 
-/* Hidden state: fade out and drop away, and skip pointer events */
+/*
+ * Hidden state: shrink down into itself toward the bottom-center,
+ * like minimizing a mac window. Exit uses a quicker ease-in.
+ */
 .hidden {
   opacity: 0;
-  transform: translateY(24px) scale(0.96);
+  transform: translateX(-50%) translateY(28px) scale(0.12);
   pointer-events: none;
+  transition: transform 260ms cubic-bezier(0.55, 0, 0.85, 0.35),
+    opacity 200ms ease-in;
 }
 
 @media (max-width: 768px) {
   .wrap {
-    right: 12px;
-    bottom: 12px;
+    bottom: 14px;
     width: 300px;
     max-width: calc(100vw - 24px);
   }
 
   .reopen {
-    right: 16px;
     bottom: 16px;
   }
 }
