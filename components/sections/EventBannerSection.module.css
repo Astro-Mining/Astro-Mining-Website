@@ -1,20 +1,91 @@
-.section {
-  padding: 0;
+.wrap {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  width: 728px;
+  max-width: calc(100vw - 48px);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), opacity var(--transition);
 }
 
 .banner {
   display: block;
-  width: 100%;
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  transition: opacity var(--transition);
-}
-
-.banner:hover {
-  opacity: 0.94;
 }
 
 .image {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  color: var(--color-white);
+  background: var(--color-ink-900);
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.close:hover {
+  background: var(--color-orange-600);
+}
+
+/* Collapsed floating circle */
+.reopen {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  color: var(--color-white);
+  background: var(--color-orange-600);
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.reopen:hover {
+  transform: scale(1.06);
+  background: var(--color-orange-700);
+}
+
+/* Hidden state: fade out and drop away, and skip pointer events */
+.hidden {
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    right: 12px;
+    bottom: 12px;
+    width: 300px;
+    max-width: calc(100vw - 24px);
+  }
+
+  .reopen {
+    right: 16px;
+    bottom: 16px;
+  }
 }
