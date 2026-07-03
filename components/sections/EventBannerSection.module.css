@@ -49,10 +49,10 @@
   background: var(--color-orange-600);
 }
 
-/* Collapsed floating circle */
+/* Collapsed floating circle — pinned bottom-right */
 .reopen {
   position: fixed;
-  left: 50%;
+  right: 24px;
   bottom: 24px;
   z-index: 60;
   display: grid;
@@ -66,8 +66,8 @@
   border-radius: 50%;
   box-shadow: var(--shadow-soft);
   cursor: pointer;
-  transform-origin: bottom center;
-  transform: translateX(-50%) translateY(0) scale(1);
+  transform-origin: bottom right;
+  transform: translateY(0) scale(1);
   will-change: transform, opacity;
   transition: transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1),
     opacity 240ms ease-out, background var(--transition);
@@ -75,6 +75,11 @@
 
 .reopen:hover {
   background: var(--color-orange-700);
+}
+
+/* Circle keeps its bottom-right anchor while hidden (no centering shift) */
+.reopen.hidden {
+  transform: translateY(28px) scale(0.12);
 }
 
 /*
@@ -97,6 +102,7 @@
   }
 
   .reopen {
+    right: 16px;
     bottom: 16px;
   }
 }
