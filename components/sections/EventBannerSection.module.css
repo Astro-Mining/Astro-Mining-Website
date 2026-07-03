@@ -1,32 +1,20 @@
 .section {
-  padding: 2.75rem 0;
+  padding: 0;
 }
 
 .banner {
   display: block;
-  margin: 0 auto;
-  width: fit-content;
-  max-width: 100%;
-  border-radius: var(--radius-sm);
+  width: 100%;
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: opacity var(--transition);
 }
 
 .banner:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-soft);
+  opacity: 0.94;
 }
 
 .image {
   display: block;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 2rem 0;
-  }
 }
