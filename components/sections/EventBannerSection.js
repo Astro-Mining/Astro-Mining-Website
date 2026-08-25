@@ -38,10 +38,10 @@ export default function EventBannerSection() {
           aria-label="Register for Egypt Mining Forum 2026"
         >
           <picture>
-            {/* Desktop / tablet: leaderboard */}
+            {/* Desktop / tablet: vertical skyscraper, docked to the side */}
             <source
               media="(min-width: 768px)"
-              srcSet={`${BASE}/banner-leaderboard-728x90.jpg`}
+              srcSet={`${BASE}/banner-skyscraper-120x600.jpg`}
             />
             {/* Mobile: compact banner */}
             <img
