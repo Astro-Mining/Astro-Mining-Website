@@ -3,7 +3,7 @@ import "@/app/globals.css";
 import ClientProviders from "@/components/layout/ClientProviders";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
-import EventBannerSection from "@/components/sections/EventBannerSection";
+import LatestNewsPopup from "@/components/sections/LatestNewsPopup";
 import { navigation, contactDetails } from "@/data/siteContent";
 
 const bodyFont = Gantari({
@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
           <SiteHeader navigation={navigation} />
           <main>{children}</main>
           <SiteFooter navigation={navigation} contact={contactDetails} />
-          <EventBannerSection />
+          <LatestNewsPopup />
         </ClientProviders>
       </body>
     </html>

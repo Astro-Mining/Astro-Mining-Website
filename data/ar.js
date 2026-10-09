@@ -5,6 +5,7 @@ export const navigation = [
   { label: "الخدمات", href: "/services" },
   { label: "أسواق التصدير", href: "/exports" },
   { label: "الشركاء", href: "/partners" },
+  { label: "الأخبار", href: "/news" },
   { label: "تواصل معنا", href: "/contact" }
 ];
 

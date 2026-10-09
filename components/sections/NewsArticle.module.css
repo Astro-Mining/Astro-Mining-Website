@@ -1,0 +1,250 @@
+.narrow {
+  max-width: 56rem;
+}
+
+/* Header band */
+.hero {
+  padding: 9.5rem 0 7rem;
+  background: var(--color-ink-950);
+  color: var(--color-white);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.back:hover {
+  color: var(--color-orange-500);
+}
+
+.backIcon {
+  transform: scaleX(-1);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin: 0 0 1.1rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.88rem;
+}
+
+.meta > span {
+  color: var(--color-orange-500);
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 1.25rem 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+/* Lead media + article copy */
+.content {
+  padding-bottom: 5rem;
+}
+
+.cover,
+.content .video {
+  margin: -4.5rem 0 2.75rem;
+}
+
+.cover {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  background: var(--color-steel-100);
+}
+
+.cover img {
+  width: 100%;
+  height: auto;
+}
+
+.coverPortrait {
+  max-width: 30rem;
+  margin-inline: auto;
+}
+
+.prose {
+  color: var(--color-ink-800);
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.prose p {
+  margin: 0 0 1.35rem;
+}
+
+.list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0 0 1.6rem;
+  padding: 1.4rem 1.5rem;
+  border-inline-start: 3px solid var(--color-orange-600);
+  border-radius: var(--radius-sm);
+  background: var(--color-sand-100);
+  list-style: none;
+}
+
+.list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.list strong {
+  color: var(--color-ink-950);
+}
+
+.check {
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+  color: var(--color-orange-600);
+}
+
+.source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--color-orange-500), var(--color-orange-700));
+  box-shadow: 0 16px 28px rgba(207, 91, 18, 0.24);
+  color: var(--color-white);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform var(--transition);
+}
+
+.source:hover {
+  transform: translateY(-2px);
+}
+
+/* Video players */
+.video {
+  margin: 0;
+}
+
+.videoFrame {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  background: #000;
+  box-shadow: var(--shadow-card);
+}
+
+.videoFrame video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.video figcaption {
+  margin-top: 0.8rem;
+  color: var(--color-steel-500);
+  font-size: 0.92rem;
+}
+
+.mediaSection,
+.related {
+  background: var(--color-sand-100);
+}
+
+.sectionTitle {
+  margin-bottom: 2rem;
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  gap: 1.75rem 1.5rem;
+}
+
+/* More news */
+.relatedHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 1.5rem;
+}
+
+.relatedCell {
+  height: 100%;
+}
+
+/* Arabic copy */
+:global(.lang-ar) .title {
+  font-family: var(--font-arabic), sans-serif;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+:global(.lang-ar) .back,
+:global(.lang-ar) .meta > span,
+:global(.lang-ar) .source {
+  font-family: var(--font-arabic), sans-serif;
+  letter-spacing: 0;
+}
+
+:global(.lang-ar) .prose,
+:global(.lang-ar) .lead {
+  font-family: var(--font-arabic), sans-serif;
+  font-size: 1.12rem;
+  line-height: 2;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 8.5rem 0 5.5rem;
+  }
+
+  .cover,
+  .content .video {
+    margin-top: -3rem;
+  }
+
+  .prose {
+    font-size: 1rem;
+  }
+
+  .list {
+    padding: 1.1rem 1.1rem;
+  }
+}

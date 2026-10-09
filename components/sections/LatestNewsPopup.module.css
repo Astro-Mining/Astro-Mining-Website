@@ -1,0 +1,229 @@
+.wrap {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  z-index: 60;
+  width: 210px;
+  max-width: calc(100vw - 48px);
+  transform-origin: right center;
+  transform: translateY(-50%) translateX(0) scale(1);
+  will-change: transform, opacity;
+  /* Appear: springy "pop" out (mac genie feel) */
+  transition: transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 240ms ease-out;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-ink-950);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.card:hover .image {
+  transform: scale(1.06);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.85rem 0.95rem 0.95rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-orange-600);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-orange-500);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(229, 109, 31, 0.55); }
+  100% { box-shadow: 0 0 0 7px rgba(229, 109, 31, 0); }
+}
+
+.title {
+  color: var(--color-ink-900);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-steel-500);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.card:hover .cta {
+  color: var(--color-orange-600);
+}
+
+.arrow {
+  transition: transform var(--transition);
+}
+
+.card:hover .arrow {
+  transform: translateX(3px);
+}
+
+[dir="rtl"] .arrow {
+  transform: scaleX(-1);
+}
+
+:global(.lang-ar) .eyebrow,
+:global(.lang-ar) .title,
+:global(.lang-ar) .cta {
+  font-family: var(--font-arabic), sans-serif;
+  letter-spacing: 0;
+}
+
+.close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  color: var(--color-white);
+  background: var(--color-ink-900);
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.close:hover {
+  background: var(--color-orange-600);
+}
+
+/* Collapsed floating circle — pinned bottom-right */
+.reopen {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  color: var(--color-white);
+  background: var(--color-orange-600);
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transform-origin: bottom right;
+  transform: translateY(0) scale(1);
+  will-change: transform, opacity;
+  transition: transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 240ms ease-out, background var(--transition);
+}
+
+.reopen:hover {
+  background: var(--color-orange-700);
+}
+
+/* Circle keeps its bottom-right anchor while hidden (no centering shift) */
+.reopen.hidden {
+  transform: translateY(28px) scale(0.12);
+}
+
+/*
+ * Hidden state: shrink down into itself toward the right edge,
+ * like minimizing a mac window. Exit uses a quicker ease-in.
+ */
+.hidden {
+  opacity: 0;
+  transform: translateY(-50%) translateX(28px) scale(0.12);
+  pointer-events: none;
+  transition: transform 260ms cubic-bezier(0.55, 0, 0.85, 0.35),
+    opacity 200ms ease-in;
+}
+
+/* Mobile: compact horizontal card pinned to the bottom */
+@media (max-width: 768px) {
+  .wrap {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 14px;
+    width: 340px;
+    max-width: calc(100vw - 24px);
+    transform-origin: bottom center;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  .wrap.hidden {
+    transform: translateX(-50%) translateY(28px) scale(0.12);
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+  }
+
+  .media {
+    aspect-ratio: auto;
+    min-height: 84px;
+  }
+
+  .body {
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .title {
+    font-size: 0.9rem;
+  }
+
+  .reopen {
+    right: 16px;
+    bottom: 16px;
+  }
+}

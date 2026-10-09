@@ -5,6 +5,7 @@ export const navigation = [
   { label: "Services", href: "/services" },
   { label: "Export Markets", href: "/exports" },
   { label: "Partners", href: "/partners" },
+  { label: "News", href: "/news" },
   { label: "Contact Us", href: "/contact" }
 ];
 

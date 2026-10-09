@@ -44,6 +44,9 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Partners slider with slow auto-advance and manual arrow controls
 - Global reach map section with coordinate-based export pins and flag previews
 - Footer with contact info, social links, and profile download
+- News page (`/news`) with a featured story and story cards (bilingual EN/AR)
+- News story pages (`/news/[slug]`, statically generated) with lead video or cover, article copy, video players, a photo gallery with lightbox, and related stories
+- Site-wide "Latest News" popup linking to `/news` (replaces the ended Egypt Mining Forum banner; hidden on news pages)
 
 ## Notes
 
@@ -52,6 +55,13 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Stage 1 content has been refined using the client-approved About, Services, and Contact copy.
 - Styling avoids Tailwind and Bootstrap per project rules.
 - Animations focus on subtle fade-up and staggered reveal patterns.
+
+## Adding News
+
+- Stories live in `data/news.js` (shared media plus `en` / `ar` copy). Body blocks are paragraphs or `{ list: [...] }` checklists.
+- Put photos in `public/assets/images/news/<slug>/` and videos in `public/assets/video/news/`.
+- Photos: high-quality JPEG, max 2000px on the long edge (PNG exports are converted).
+- Videos: H.264 MP4 with `+faststart` so they play in every browser and start streaming immediately, plus a JPEG poster frame. Keep every file under GitHub's 100 MB limit (the 10-minute Al Nahar segment was two-pass encoded to ~95 MB).
 
 ## Scripts
 

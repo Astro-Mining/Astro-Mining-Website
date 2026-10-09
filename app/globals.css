@@ -30,6 +30,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lock page scroll while a modal (e.g. the news photo lightbox) is open */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body), sans-serif;

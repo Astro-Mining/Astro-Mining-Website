@@ -39,6 +39,7 @@
   font-size: 0.88rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
   color: rgba(255, 255, 255, 0.78);
   transition: color var(--transition);
 }
@@ -112,6 +113,7 @@
   border-radius: 0.35rem;
   background: var(--color-orange-600);
   box-shadow: none;
+  white-space: nowrap;
 }
 
 .desktopCta :global(.button):hover {
@@ -185,7 +187,22 @@
   color: var(--color-ink-900);
 }
 
-@media (max-width: 980px) {
+/* Narrow desktops: tighten the nav so every link stays on one line */
+@media (max-width: 1300px) {
+  .desktopNav {
+    gap: 1.25rem;
+  }
+
+  .link {
+    font-size: 0.82rem;
+  }
+
+  .desktopCta :global(.button) {
+    padding: 0.95rem 1.25rem;
+  }
+}
+
+@media (max-width: 1180px) {
   .desktopNav,
   .desktopCta {
     display: none;

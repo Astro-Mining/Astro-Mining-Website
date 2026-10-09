@@ -34,6 +34,8 @@ export default function SiteHeader({ navigation: _nav }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Section links stay active on their nested pages (e.g. /news/<story>)
+  const isActive = (href) => pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
   const isHome = pathname === "/";
   const homeAtTop = isHome && !scrolled;
   const logoVariant = (homeAtTop || isOpen) ? "default" : "footer";
@@ -49,7 +51,7 @@ export default function SiteHeader({ navigation: _nav }) {
             <Link
               key={item.href}
               className={clsx(styles.link, {
-                [styles.active]: pathname === item.href
+                [styles.active]: isActive(item.href)
               })}
               href={item.href}
             >
@@ -96,7 +98,7 @@ export default function SiteHeader({ navigation: _nav }) {
               key={item.href}
               href={item.href}
               className={clsx(styles.mobileLink, {
-                [styles.mobileLinkActive]: pathname === item.href
+                [styles.mobileLinkActive]: isActive(item.href)
               })}
               onClick={() => setIsOpen(false)}
             >
