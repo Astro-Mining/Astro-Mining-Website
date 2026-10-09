@@ -7,7 +7,7 @@ import Icon from "@/components/shared/Icon";
 import styles from "@/components/shared/MediaGallery.module.css";
 
 // Photo grid with a native <dialog> lightbox (Esc, arrow keys, backdrop click).
-export default function MediaGallery({ images, labels }) {
+export default function MediaGallery({ images, labels, layout = "grid" }) {
   const dialogRef = useRef(null);
   const [index, setIndex] = useState(null);
   const total = images.length;
@@ -27,11 +27,11 @@ export default function MediaGallery({ images, labels }) {
 
   return (
     <>
-      <div className={styles.grid}>
+      <div className={clsx(styles.grid, layout === "mosaic" && styles.mosaic)}>
         {images.map((image, i) => (
           <button
             aria-label={`${labels.viewPhoto} ${i + 1}: ${image.alt}`}
-            className={styles.thumb}
+            className={clsx(styles.thumb, layout === "mosaic" && (image.portrait ? styles.tall : i % 7 === 0 && styles.wide))}
             key={image.src}
             onClick={() => open(i)}
             type="button"

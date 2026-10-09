@@ -9,7 +9,7 @@ import { newsUi } from "@/data/news";
 import { formatNewsDate, textDir } from "@/lib/news";
 import styles from "@/components/shared/NewsCard.module.css";
 
-export default function NewsCard({ item, featured = false, headingLevel = 2 }) {
+export default function NewsCard({ item, featured = false, headingLevel = 2, href }) {
   const { lang } = useLang();
   const t = newsUi[lang];
   const copy = item[lang];
@@ -18,7 +18,7 @@ export default function NewsCard({ item, featured = false, headingLevel = 2 }) {
   const photoCount = item.gallery?.length ?? 0;
 
   return (
-    <Link className={clsx(styles.card, featured && styles.featured)} href={`/news/${item.slug}`}>
+    <Link className={clsx(styles.card, featured && styles.featured)} href={href ?? `/news/${item.slug}`}>
       <div className={styles.media}>
         <Image
           alt={item.cover.alt}

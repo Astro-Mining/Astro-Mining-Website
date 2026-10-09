@@ -31,7 +31,19 @@ export const newsUi = {
     popupTitle: "Astro at Egypt Mining Forum 2026",
     popupCta: "View news",
     popupHide: "Hide latest news",
-    popupShow: "Show latest news"
+    popupShow: "Show latest news",
+    filters: { all: "All", event: "Events", tv: "TV", press: "Press" },
+    watch: "Watch",
+    seenIn: "As seen in",
+    atAGlance: "At a glance",
+    share: "Share",
+    copyLink: "Copy link",
+    copied: "Link copied",
+    previousStory: "Previous story",
+    nextStory: "Next story",
+    playVideo: "Play video",
+    readStory: "Read the story",
+    noResults: "No stories in this category yet."
   },
   ar: {
     crumb: "المركز الإعلامي",
@@ -54,7 +66,19 @@ export const newsUi = {
     popupTitle: "أسترو في منتدى مصر للتعدين 2026",
     popupCta: "تصفح الأخبار",
     popupHide: "إخفاء آخر الأخبار",
-    popupShow: "عرض آخر الأخبار"
+    popupShow: "عرض آخر الأخبار",
+    filters: { all: "الكل", event: "فعاليات", tv: "تلفزيون", press: "صحافة" },
+    watch: "شاهد",
+    seenIn: "ظهرنا في",
+    atAGlance: "نظرة سريعة",
+    share: "مشاركة",
+    copyLink: "نسخ الرابط",
+    copied: "تم نسخ الرابط",
+    previousStory: "الخبر السابق",
+    nextStory: "الخبر التالي",
+    playVideo: "تشغيل الفيديو",
+    readStory: "اقرأ الخبر",
+    noResults: "لا توجد أخبار في هذا التصنيف بعد."
   }
 };
 
@@ -94,14 +118,28 @@ const forumPhotoAlts = [
   "Astro kaolin product data sheet"
 ];
 
+const forumPortraits = new Set([15, 16, 22, 23, 24, 28, 30, 32]);
+
 const forumGallery = forumPhotoAlts.map((alt, i) => ({
   src: `${forumDir}/forum-${String(i + 1).padStart(2, "0")}.jpg`,
-  alt
+  alt,
+  portrait: forumPortraits.has(i + 1)
 }));
 
 export const newsItems = [
   {
     slug: "egypt-mining-forum-2026",
+    type: "event",
+    outlet: { en: "Egypt Mining Forum", ar: "منتدى مصر للتعدين" },
+    facts: [
+      { label: { en: "Dates", ar: "التاريخ" }, value: { en: "28–29 September 2026", ar: "28–29 سبتمبر 2026" } },
+      { label: { en: "Venue", ar: "المكان" }, value: { en: "St. Regis Almasa, New Capital", ar: "سانت ريجيس الماسة، العاصمة الإدارية" } },
+      { label: { en: "Booth", ar: "الجناح" }, value: { en: "2C34", ar: "2C34" } }
+    ],
+    highlight: {
+      en: "Committed to the highest quality standards and to partnerships that build sustainable solutions for the mining market.",
+      ar: "التزام مستمر بتوفير أعلى مستويات الجودة، وتعزيز التعاون مع الشركاء لبناء حلول مستدامة تلبي تطلعات سوق التعدين."
+    },
     date: "2026-09-28",
     featured: true,
     cover: { ...forumGallery[0], width: 1794, height: 1196 },
@@ -109,16 +147,19 @@ export const newsItems = [
     videos: [
       {
         src: `${VID}/forum-venue.mp4`,
+        duration: "1:18",
         poster: `${forumDir}/poster-venue.jpg`,
         title: { en: "Egypt Mining Forum 2026 venue", ar: "مقر منتدى مصر للتعدين 2026" }
       },
       {
         src: `${VID}/forum-brochure.mp4`,
+        duration: "0:40",
         poster: `${forumDir}/poster-brochure.jpg`,
         title: { en: "Astro product brochures at the forum", ar: "كتيبات منتجات أسترو في المنتدى" }
       },
       {
         src: `${VID}/forum-booth-chairman.mp4`,
+        duration: "0:15",
         poster: `${forumDir}/poster-booth.jpg`,
         title: { en: "Moments from the Astro booth", ar: "لقطات من جناح أسترو" }
       }
@@ -149,6 +190,18 @@ export const newsItems = [
   },
   {
     slug: "ana-el-watan-al-hadath-interview",
+    type: "tv",
+    outlet: { en: "Al Hadath", ar: "قناة الحدث" },
+    facts: [
+      { label: { en: "Programme", ar: "البرنامج" }, value: { en: "Ana El Watan", ar: "أنا الوطن" } },
+      { label: { en: "Channel", ar: "القناة" }, value: { en: "Al Hadath", ar: "الحدث" } },
+      { label: { en: "Host", ar: "تقديم" }, value: { en: "Aysar Al-Hamidi", ar: "أيسر الحامدي" } }
+    ],
+    highlight: {
+      en: "Egypt holds immense mineral wealth, led by Egyptian limestone, which ranks among the finest in the world.",
+      ar: "مصر تمتلك ثروات تعدينية هائلة، وعلى رأسها الحجر الجيري المصري الذي يُصنف ضمن الأفضل عالمياً.",
+      by: { en: "Eng. Hamada Hammam, Chairman", ar: "م. حمادة همام، رئيس مجلس الإدارة" }
+    },
     date: "2026-10",
     cover: {
       src: `${IMG}/ana-el-watan-al-hadath/ana-el-watan-statement.jpg`,
@@ -182,6 +235,17 @@ export const newsItems = [
   },
   {
     slug: "al-nahar-tv-coverage",
+    type: "tv",
+    outlet: { en: "Al Nahar TV", ar: "قناة النهار" },
+    facts: [
+      { label: { en: "Channel", ar: "القناة" }, value: { en: "Al Nahar TV", ar: "النهار" } },
+      { label: { en: "Format", ar: "النوع" }, value: { en: "TV report and interview", ar: "تقرير ولقاء تلفزيوني" } },
+      { label: { en: "Length", ar: "المدة" }, value: { en: "10:06", ar: "10:06" } }
+    ],
+    highlight: {
+      en: "Harnessing Egypt's mineral wealth with the latest prospecting and exploration technologies.",
+      ar: "استغلال الثروات المعدنية للوطن بالاعتماد على أحدث التقنيات في مجالات التنقيب والاستكشاف."
+    },
     date: "2026-09",
     cover: {
       src: `${IMG}/al-nahar-coverage/al-nahar-interview.jpg`,
@@ -191,6 +255,7 @@ export const newsItems = [
     },
     leadVideo: {
       src: `${VID}/al-nahar-coverage.mp4`,
+      duration: "10:06",
       poster: `${IMG}/al-nahar-coverage/poster.jpg`,
       title: { en: "Al Nahar TV coverage of Astro at Egypt Mining Forum", ar: "تغطية قناة النهار لمشاركة أسترو في منتدى مصر للتعدين" }
     },
@@ -217,6 +282,17 @@ export const newsItems = [
   },
   {
     slug: "al-mussawar-interview",
+    type: "press",
+    outlet: { en: "Al Mussawar", ar: "المصور" },
+    facts: [
+      { label: { en: "Publication", ar: "المطبوعة" }, value: { en: "Al Mussawar magazine", ar: "مجلة المصور" } },
+      { label: { en: "Published", ar: "تاريخ النشر" }, value: { en: "19 July 2026", ar: "19 يوليو 2026" } },
+      { label: { en: "Interview with", ar: "حوار مع" }, value: { en: "Eng. Hamada Hammam, Chairman", ar: "م. حمادة همام، رئيس مجلس الإدارة" } }
+    ],
+    highlight: {
+      en: "Integrating artificial intelligence and modern technologies to maximise the value of Egypt's mineral wealth.",
+      ar: "دمج الذكاء الاصطناعي والتقنيات الحديثة لتعظيم الاستفادة من ثروات مصر التعدينية."
+    },
     date: "2026-07-19",
     cover: {
       src: `${IMG}/al-mussawar-interview/al-mussawar-feature.jpg`,
@@ -284,6 +360,17 @@ export const newsItems = [
   },
   {
     slug: "rose-el-youssef-interview",
+    type: "press",
+    outlet: { en: "Rose El Youssef", ar: "روز اليوسف" },
+    facts: [
+      { label: { en: "Publication", ar: "المطبوعة" }, value: { en: "Rose El Youssef", ar: "روز اليوسف" } },
+      { label: { en: "Published", ar: "تاريخ النشر" }, value: { en: "26 June 2026", ar: "26 يونيو 2026" } },
+      { label: { en: "Interview with", ar: "حوار مع" }, value: { en: "Eng. Hamada Hammam, Chairman", ar: "م. حمادة همام، رئيس مجلس الإدارة" } }
+    ],
+    highlight: {
+      en: "Investing in human capital is the company's core driver of success.",
+      ar: "الاستثمار في رأس المال البشري هو محرك النجاح الأساسي للشركة."
+    },
     date: "2026-06-26",
     cover: {
       src: `${IMG}/rose-el-youssef-interview/chairman-hamada-hammam.jpg`,

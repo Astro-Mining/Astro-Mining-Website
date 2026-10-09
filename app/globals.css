@@ -30,6 +30,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Visually hidden, still read by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 /* Lock page scroll while a modal (e.g. the news photo lightbox) is open */
 html:has(dialog[open]) {
   overflow: hidden;

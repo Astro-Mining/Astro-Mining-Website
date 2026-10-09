@@ -1,0 +1,132 @@
+.bar {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 80;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  padding: 0.55rem 0.7rem;
+  transform: translateX(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(17, 24, 39, 0.94);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  color: var(--color-white);
+  font-family: var(--font-body), sans-serif;
+  direction: ltr;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.groupLabel {
+  margin-right: 0.25rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.8rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+.option b {
+  display: grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.72rem;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+}
+
+.active,
+.active:hover {
+  background: var(--color-orange-600);
+  color: var(--color-white);
+}
+
+.active b {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.jump {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.jump:hover {
+  border-color: var(--color-orange-500);
+}
+
+.short {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .bar {
+    /* Sit above the Next.js dev badge in the bottom-left corner */
+    bottom: 64px;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 14px;
+  }
+
+  .group {
+    gap: 0.15rem;
+  }
+
+  .option {
+    padding: 0.25rem;
+  }
+
+  .option span {
+    display: none;
+  }
+
+  .groupLabel {
+    margin-right: 0.15rem;
+    font-size: 0.62rem;
+  }
+
+  .jump {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .long {
+    display: none;
+  }
+
+  .short {
+    display: inline;
+  }
+}

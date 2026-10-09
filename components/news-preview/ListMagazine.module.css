@@ -1,0 +1,343 @@
+/* Cover story */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(88vh, 760px);
+  overflow: hidden;
+  background: var(--color-ink-950);
+  color: var(--color-white);
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(17, 24, 39, 0.9) 0%, rgba(17, 24, 39, 0) 32%),
+    linear-gradient(0deg, rgba(17, 24, 39, 0.96) 8%, rgba(17, 24, 39, 0.55) 48%, rgba(17, 24, 39, 0.05) 75%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  padding: 10rem 0 4rem;
+}
+
+.heroMeta {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.heroTitle {
+  max-width: 56rem;
+  margin: 1rem 0 0;
+  font-family: var(--font-heading), sans-serif;
+  font-size: clamp(2rem, 4.4vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.heroExcerpt {
+  max-width: 40rem;
+  margin: 1.25rem 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.4rem;
+  margin-top: 2rem;
+}
+
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.6rem;
+  border-radius: 999px;
+  background: var(--color-orange-600);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background var(--transition);
+}
+
+.heroButton:hover {
+  background: var(--color-orange-500);
+}
+
+.heroStat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.92rem;
+}
+
+.arrow {
+  transition: transform var(--transition);
+}
+
+a:hover .arrow {
+  transform: translateX(3px);
+}
+
+[dir="rtl"] .arrow {
+  transform: scaleX(-1);
+}
+
+/* List + sidebar */
+.body {
+  background: var(--color-sand-100);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  align-items: start;
+  gap: 3rem;
+}
+
+.chips {
+  margin-bottom: 1.75rem;
+}
+
+.list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.empty {
+  color: var(--color-steel-500);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 17.5rem minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.row:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+
+.rowMedia {
+  position: relative;
+  min-height: 12rem;
+  background: var(--color-ink-950);
+}
+
+.rowImage {
+  object-fit: cover;
+}
+
+.play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(207, 91, 18, 0.92);
+  color: var(--color-white);
+}
+
+.rowBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem 1.75rem;
+}
+
+.rowTitle {
+  margin: 0;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.rowExcerpt {
+  margin: 0;
+  color: var(--color-steel-500);
+  line-height: 1.65;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  color: var(--color-orange-600);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aside {
+  position: sticky;
+  top: 7.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.panel {
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-ink-950);
+  color: var(--color-white);
+}
+
+.panelTitle {
+  margin: 0 0 1.1rem;
+  color: var(--color-orange-500);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.videoList {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.videoItem {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.videoThumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+
+.videoPlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(207, 91, 18, 0.92);
+}
+
+.videoText {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.videoTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: color var(--transition);
+}
+
+.videoItem:hover .videoTitle {
+  color: var(--color-orange-500);
+}
+
+.videoDuration {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.outlets {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.outlets a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+.outlets li:last-child a {
+  border-bottom: 0;
+}
+
+.outlets a span {
+  flex: 1;
+}
+
+.outlets a:hover {
+  color: var(--color-orange-500);
+}
+
+:global(.lang-ar) .heroTitle,
+:global(.lang-ar) .rowTitle,
+:global(.lang-ar) .heroButton,
+:global(.lang-ar) .more,
+:global(.lang-ar) .panelTitle {
+  font-family: var(--font-arabic), sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.45;
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .aside {
+    position: static;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rowMedia {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .rowBody {
+    padding: 1.25rem;
+  }
+
+  .heroInner {
+    padding: 9rem 0 2.75rem;
+  }
+}
