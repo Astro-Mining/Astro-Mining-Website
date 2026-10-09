@@ -16,6 +16,9 @@ export default function LatestNewsPopup() {
   const { lang } = useLang();
   const t = newsUi[lang];
   const [collapsed, setCollapsed] = useState(false);
+  const image = featuredNews.popupImage ?? featuredNews.cover;
+  const photoCount = featuredNews.gallery?.length ?? 0;
+  const videoCount = (featuredNews.leadVideo ? 1 : 0) + (featuredNews.videos?.length ?? 0);
 
   // Auto-collapse to a circle once the footer scrolls into view,
   // and auto-expand again when the footer leaves the viewport.
@@ -39,7 +42,7 @@ export default function LatestNewsPopup() {
       <div className={clsx(styles.wrap, collapsed && styles.hidden)} inert={collapsed}>
         <Link className={styles.card} href="/news">
           <span className={styles.media}>
-            <Image alt="" className={styles.image} fill sizes="(max-width: 768px) 96px, 210px" src={featuredNews.cover.src} />
+            <Image alt="" className={styles.image} fill sizes="(max-width: 768px) 96px, 180px" src={image.src} />
           </span>
           <span className={styles.body} dir={textDir(lang)}>
             <span className={styles.eyebrow}>
@@ -47,6 +50,9 @@ export default function LatestNewsPopup() {
               {t.popupEyebrow}
             </span>
             <span className={styles.title}>{t.popupTitle}</span>
+            <span className={styles.stats}>
+              {photoCount} {t.photoCount} · {videoCount} {t.videoCount}
+            </span>
             <span className={styles.cta}>
               {t.popupCta}
               <Icon className={styles.arrow} name="arrowRight" size={14} />

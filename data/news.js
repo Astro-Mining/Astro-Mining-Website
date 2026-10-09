@@ -3,7 +3,8 @@
 // (items may be strings or { term, text } pairs).
 // The first item flagged `featured` is highlighted on the News page and in the
 // site-wide "Latest News" popup. `cover.focus` is an optional CSS object-position
-// used when a portrait cover is cropped into a landscape card.
+// used when a portrait cover is cropped into a landscape card. `popupImage` is
+// the tall crop shown in the popup (falls back to the cover).
 
 const IMG = "/assets/images/news";
 const VID = "/assets/video/news";
@@ -19,6 +20,7 @@ export const newsUi = {
     videos: "Videos",
     photos: "Photo gallery",
     photoCount: "photos",
+    videoCount: "videos",
     video: "Video",
     moreNews: "More news",
     viewPhoto: "View photo",
@@ -27,7 +29,7 @@ export const newsUi = {
     next: "Next photo",
     popupEyebrow: "Latest News",
     popupTitle: "Astro at Egypt Mining Forum 2026",
-    popupCta: "See photos & videos",
+    popupCta: "View news",
     popupHide: "Hide latest news",
     popupShow: "Show latest news"
   },
@@ -41,6 +43,7 @@ export const newsUi = {
     videos: "الفيديوهات",
     photos: "معرض الصور",
     photoCount: "صورة",
+    videoCount: "فيديوهات",
     video: "فيديو",
     moreNews: "أخبار أخرى",
     viewPhoto: "عرض الصورة",
@@ -49,7 +52,7 @@ export const newsUi = {
     next: "الصورة التالية",
     popupEyebrow: "آخر الأخبار",
     popupTitle: "أسترو في منتدى مصر للتعدين 2026",
-    popupCta: "شاهد الصور والفيديوهات",
+    popupCta: "تصفح الأخبار",
     popupHide: "إخفاء آخر الأخبار",
     popupShow: "عرض آخر الأخبار"
   }
@@ -102,6 +105,7 @@ export const newsItems = [
     date: "2026-09-28",
     featured: true,
     cover: { ...forumGallery[0], width: 1794, height: 1196 },
+    popupImage: forumGallery[1],
     videos: [
       {
         src: `${VID}/forum-venue.mp4`,

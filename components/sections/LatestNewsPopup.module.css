@@ -1,10 +1,10 @@
 .wrap {
   position: fixed;
   right: 24px;
-  top: 50%;
+  /* Centered in the space below the fixed header */
+  top: calc(50% + 2.5rem);
   z-index: 60;
-  width: 210px;
-  max-width: calc(100vw - 48px);
+  width: 180px;
   transform-origin: right center;
   transform: translateY(-50%) translateX(0) scale(1);
   will-change: transform, opacity;
@@ -13,32 +13,41 @@
     opacity 240ms ease-out;
 }
 
+/* Tall "skyscraper" card: photo fading into a dark copy panel */
 .card {
   display: flex;
   flex-direction: column;
+  height: clamp(360px, 66vh, 540px);
   overflow: hidden;
-  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  background: var(--color-white);
+  background: var(--color-ink-950);
   box-shadow: var(--shadow-soft);
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .card:hover {
   transform: translateY(-3px);
+  box-shadow: 0 22px 60px rgba(17, 24, 39, 0.28);
 }
 
 .media {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 10;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
-  background: var(--color-ink-950);
+}
+
+.media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0) 45%, var(--color-ink-950) 100%);
 }
 
 .image {
   object-fit: cover;
-  transition: transform 600ms ease;
+  transition: transform 700ms ease;
 }
 
 .card:hover .image {
@@ -46,17 +55,19 @@
 }
 
 .body {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  padding: 0.85rem 0.95rem 0.95rem;
+  gap: 0.5rem;
+  margin-top: -2.75rem;
+  padding: 0 1rem 1rem;
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  color: var(--color-orange-600);
+  color: var(--color-orange-500);
   font-family: var(--font-heading), sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
@@ -78,28 +89,43 @@
 }
 
 .title {
-  color: var(--color-ink-900);
+  color: var(--color-white);
   font-family: var(--font-heading), sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.stats {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  color: var(--color-steel-500);
-  font-size: 0.78rem;
-  font-weight: 600;
-  transition: color var(--transition);
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-orange-600);
+  color: var(--color-white);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+  transition: background var(--transition);
 }
 
 .card:hover .cta {
-  color: var(--color-orange-600);
+  background: var(--color-orange-500);
 }
 
 .arrow {
+  flex-shrink: 0;
   transition: transform var(--transition);
 }
 
@@ -116,6 +142,11 @@
 :global(.lang-ar) .cta {
   font-family: var(--font-arabic), sans-serif;
   letter-spacing: 0;
+  text-transform: none;
+}
+
+:global(.lang-ar) .title {
+  line-height: 1.45;
 }
 
 .close {
@@ -185,7 +216,14 @@
     opacity 200ms ease-in;
 }
 
-/* Mobile: compact horizontal card pinned to the bottom */
+/* Short screens: keep the tall card inside the viewport */
+@media (max-height: 560px) and (min-width: 769px) {
+  .card {
+    height: calc(100vh - 140px);
+  }
+}
+
+/* Phones: compact horizontal card pinned to the bottom */
 @media (max-width: 768px) {
   .wrap {
     left: 50%;
@@ -204,22 +242,39 @@
 
   .card {
     display: grid;
-    grid-template-columns: 96px 1fr;
+    grid-template-columns: 92px 1fr;
+    height: auto;
   }
 
-  .media {
-    aspect-ratio: auto;
-    min-height: 84px;
+  .media::after {
+    display: none;
   }
 
   .body {
     justify-content: center;
-    gap: 0.25rem;
-    padding: 0.65rem 0.85rem;
+    gap: 0.2rem;
+    margin-top: 0;
+    padding: 0.7rem 0.9rem;
   }
 
   .title {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+  }
+
+  .stats {
+    display: none;
+  }
+
+  .cta {
+    justify-content: flex-start;
+    margin-top: 0.15rem;
+    padding: 0;
+    background: none;
+    color: var(--color-orange-500);
+  }
+
+  .card:hover .cta {
+    background: none;
   }
 
   .reopen {
