@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import clsx from "clsx";
 import Icon from "@/components/shared/Icon";
 import { useLang } from "@/context/LanguageContext";
 import { newsUi } from "@/data/news";
 import { formatNewsDate, textDir } from "@/lib/news";
 import styles from "@/components/shared/NewsCard.module.css";
 
-export default function NewsCard({ item, featured = false, headingLevel = 2, href }) {
+export default function NewsCard({ item, headingLevel = 2 }) {
   const { lang } = useLang();
   const t = newsUi[lang];
   const copy = item[lang];
@@ -18,14 +17,13 @@ export default function NewsCard({ item, featured = false, headingLevel = 2, hre
   const photoCount = item.gallery?.length ?? 0;
 
   return (
-    <Link className={clsx(styles.card, featured && styles.featured)} href={href ?? `/news/${item.slug}`}>
+    <Link className={styles.card} href={`/news/${item.slug}`}>
       <div className={styles.media}>
         <Image
           alt={item.cover.alt}
           className={styles.image}
           fill
-          preload={featured}
-          sizes={featured ? "(max-width: 900px) 100vw, 55vw" : "(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 25vw"}
+          sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 33vw"
           src={item.cover.src}
           style={item.cover.focus ? { objectPosition: item.cover.focus } : undefined}
         />
@@ -46,7 +44,6 @@ export default function NewsCard({ item, featured = false, headingLevel = 2, hre
       </div>
       <div className={styles.body} dir={textDir(lang)}>
         <p className={styles.meta}>
-          {featured && <span className={styles.featuredTag}>{t.featured}</span>}
           <span>{copy.category}</span>
           <time dateTime={item.date}>{formatNewsDate(item.date, lang)}</time>
         </p>

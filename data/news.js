@@ -34,15 +34,11 @@ export const newsUi = {
     popupShow: "Show latest news",
     filters: { all: "All", event: "Events", tv: "TV", press: "Press" },
     watch: "Watch",
-    seenIn: "As seen in",
     atAGlance: "At a glance",
     share: "Share",
     copyLink: "Copy link",
     copied: "Link copied",
-    previousStory: "Previous story",
-    nextStory: "Next story",
     playVideo: "Play video",
-    readStory: "Read the story",
     noResults: "No stories in this category yet."
   },
   ar: {
@@ -69,15 +65,11 @@ export const newsUi = {
     popupShow: "عرض آخر الأخبار",
     filters: { all: "الكل", event: "فعاليات", tv: "تلفزيون", press: "صحافة" },
     watch: "شاهد",
-    seenIn: "ظهرنا في",
     atAGlance: "نظرة سريعة",
     share: "مشاركة",
     copyLink: "نسخ الرابط",
     copied: "تم نسخ الرابط",
-    previousStory: "الخبر السابق",
-    nextStory: "الخبر التالي",
     playVideo: "تشغيل الفيديو",
-    readStory: "اقرأ الخبر",
     noResults: "لا توجد أخبار في هذا التصنيف بعد."
   }
 };
@@ -118,19 +110,15 @@ const forumPhotoAlts = [
   "Astro kaolin product data sheet"
 ];
 
-const forumPortraits = new Set([15, 16, 22, 23, 24, 28, 30, 32]);
-
 const forumGallery = forumPhotoAlts.map((alt, i) => ({
   src: `${forumDir}/forum-${String(i + 1).padStart(2, "0")}.jpg`,
-  alt,
-  portrait: forumPortraits.has(i + 1)
+  alt
 }));
 
 export const newsItems = [
   {
     slug: "egypt-mining-forum-2026",
     type: "event",
-    outlet: { en: "Egypt Mining Forum", ar: "منتدى مصر للتعدين" },
     facts: [
       { label: { en: "Dates", ar: "التاريخ" }, value: { en: "28–29 September 2026", ar: "28–29 سبتمبر 2026" } },
       { label: { en: "Venue", ar: "المكان" }, value: { en: "St. Regis Almasa, New Capital", ar: "سانت ريجيس الماسة، العاصمة الإدارية" } },
@@ -191,7 +179,6 @@ export const newsItems = [
   {
     slug: "ana-el-watan-al-hadath-interview",
     type: "tv",
-    outlet: { en: "Al Hadath", ar: "قناة الحدث" },
     facts: [
       { label: { en: "Programme", ar: "البرنامج" }, value: { en: "Ana El Watan", ar: "أنا الوطن" } },
       { label: { en: "Channel", ar: "القناة" }, value: { en: "Al Hadath", ar: "الحدث" } },
@@ -236,7 +223,6 @@ export const newsItems = [
   {
     slug: "al-nahar-tv-coverage",
     type: "tv",
-    outlet: { en: "Al Nahar TV", ar: "قناة النهار" },
     facts: [
       { label: { en: "Channel", ar: "القناة" }, value: { en: "Al Nahar TV", ar: "النهار" } },
       { label: { en: "Format", ar: "النوع" }, value: { en: "TV report and interview", ar: "تقرير ولقاء تلفزيوني" } },
@@ -283,7 +269,6 @@ export const newsItems = [
   {
     slug: "al-mussawar-interview",
     type: "press",
-    outlet: { en: "Al Mussawar", ar: "المصور" },
     facts: [
       { label: { en: "Publication", ar: "المطبوعة" }, value: { en: "Al Mussawar magazine", ar: "مجلة المصور" } },
       { label: { en: "Published", ar: "تاريخ النشر" }, value: { en: "19 July 2026", ar: "19 يوليو 2026" } },
@@ -361,7 +346,6 @@ export const newsItems = [
   {
     slug: "rose-el-youssef-interview",
     type: "press",
-    outlet: { en: "Rose El Youssef", ar: "روز اليوسف" },
     facts: [
       { label: { en: "Publication", ar: "المطبوعة" }, value: { en: "Rose El Youssef", ar: "روز اليوسف" } },
       { label: { en: "Published", ar: "تاريخ النشر" }, value: { en: "26 June 2026", ar: "26 يونيو 2026" } },

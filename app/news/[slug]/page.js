@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import NewsArticle from "@/components/sections/NewsArticle";
+import NewsStory from "@/components/sections/NewsStory";
 import { getNewsItem, newsItems } from "@/data/news";
 
 const SITE_URL = "https://astromining-industrial.com";
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function NewsArticlePage({ params }) {
+export default async function NewsStoryPage({ params }) {
   const { slug } = await params;
   const item = getNewsItem(slug);
   if (!item) notFound();
@@ -48,7 +48,7 @@ export default async function NewsArticlePage({ params }) {
   return (
     <>
       <script dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} type="application/ld+json" />
-      <NewsArticle item={item} related={related} />
+      <NewsStory item={item} related={related} />
     </>
   );
 }

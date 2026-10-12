@@ -1,6 +1,6 @@
 import InnerPageHero from "@/components/shared/InnerPageHero";
-import NewsList from "@/components/sections/NewsList";
-import { featuredNews, newsItems, newsUi } from "@/data/news";
+import NewsHub from "@/components/sections/NewsHub";
+import { newsItems, newsUi } from "@/data/news";
 
 export const metadata = {
   title: "News",
@@ -19,7 +19,7 @@ export default function NewsPage() {
         subtitle={en.subtitle}
         ar={{ crumb: ar.crumb, title: ar.title, subtitle: ar.subtitle }}
       />
-      <NewsList featured={featuredNews} items={newsItems.filter((item) => item !== featuredNews)} />
+      <NewsHub items={newsItems} />
     </>
   );
 }

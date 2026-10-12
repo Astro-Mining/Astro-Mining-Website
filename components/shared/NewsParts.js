@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import Icon from "@/components/shared/Icon";
 import { formatNewsDate } from "@/lib/news";
-import styles from "@/components/news-preview/parts.module.css";
+import styles from "@/components/shared/NewsParts.module.css";
 
 const SITE_URL = "https://astromining-industrial.com";
 

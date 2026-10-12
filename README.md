@@ -44,8 +44,8 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Partners slider with slow auto-advance and manual arrow controls
 - Global reach map section with coordinate-based export pins and flag previews
 - Footer with contact info, social links, and profile download
-- News page (`/news`) with a featured story and story cards (bilingual EN/AR)
-- News story pages (`/news/[slug]`, statically generated) with lead video or cover, article copy, video players, a photo gallery with lightbox, and related stories
+- News page (`/news`, "media hub"): category filters, bento grid with the featured story as a large tile, and a "Watch" strip that plays every video in a modal (bilingual EN/AR)
+- News story pages (`/news/[slug]`, statically generated): full-bleed photo header, article with an "At a glance" facts/share sidebar, pull quote, video players, a photo carousel with filmstrip (swipe and arrow keys), and related stories
 - Site-wide "Latest News" popup linking to `/news` (replaces the ended Egypt Mining Forum banner; hidden on news pages)
 
 ## Notes
@@ -58,7 +58,7 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 
 ## Adding News
 
-- Stories live in `data/news.js` (shared media plus `en` / `ar` copy). Body blocks are paragraphs or `{ list: [...] }` checklists.
+- Stories live in `data/news.js` (shared media plus `en` / `ar` copy). Body blocks are paragraphs or `{ list: [...] }` checklists. Each story also has a `type` (event / tv / press, used by the filters), `facts` for the "At a glance" box, and an optional `highlight` pull quote.
 - Put photos in `public/assets/images/news/<slug>/` and videos in `public/assets/video/news/`.
 - Photos: high-quality JPEG, max 2000px on the long edge (PNG exports are converted).
 - Videos: H.264 MP4 with `+faststart` so they play in every browser and start streaming immediately, plus a JPEG poster frame. Keep every file under GitHub's 100 MB limit (the 10-minute Al Nahar segment was two-pass encoded to ~95 MB).

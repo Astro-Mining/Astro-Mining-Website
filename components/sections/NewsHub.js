@@ -6,13 +6,14 @@ import Link from "next/link";
 import clsx from "clsx";
 import Icon from "@/components/shared/Icon";
 import Reveal from "@/components/shared/Reveal";
-import { FilterChips, MetaLine, VideoDialog, useNewsFilter } from "@/components/news-preview/parts";
+import { FilterChips, MetaLine, VideoDialog, useNewsFilter } from "@/components/shared/NewsParts";
 import { useLang } from "@/context/LanguageContext";
 import { newsUi } from "@/data/news";
-import { getVideos, storyHref, textDir } from "@/lib/news";
-import styles from "@/components/news-preview/ListHub.module.css";
+import { getVideos, textDir } from "@/lib/news";
+import styles from "@/components/sections/NewsHub.module.css";
 
-export default function ListHub({ items, basePath }) {
+// News page: filterable bento grid of stories plus a "Watch" strip of every video
+export default function NewsHub({ items }) {
   const { lang } = useLang();
   const t = newsUi[lang];
   const dir = textDir(lang);
@@ -31,7 +32,7 @@ export default function ListHub({ items, basePath }) {
               const big = i === 0 && item.featured;
               return (
                 <Reveal className={clsx(styles.cell, big && styles.big)} delay={i * 0.05} direction="up" distance={24} key={item.slug}>
-                  <Link className={styles.tile} href={storyHref(basePath, item.slug)}>
+                  <Link className={styles.tile} href={`/news/${item.slug}`}>
                     <Image
                       alt={item.cover.alt}
                       className={styles.tileImage}

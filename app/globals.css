@@ -40,7 +40,7 @@ html {
   white-space: nowrap;
 }
 
-/* Lock page scroll while a modal (e.g. the news photo lightbox) is open */
+/* Lock page scroll while a modal (e.g. the news video player) is open */
 html:has(dialog[open]) {
   overflow: hidden;
 }

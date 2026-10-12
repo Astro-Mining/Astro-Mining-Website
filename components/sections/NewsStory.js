@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import Icon from "@/components/shared/Icon";
-import MediaGallery from "@/components/shared/MediaGallery";
 import NewsCard from "@/components/shared/NewsCard";
 import {
   ArticleBody,
@@ -14,13 +13,15 @@ import {
   NewsVideo,
   ShareLinks,
   SourceLink
-} from "@/components/news-preview/parts";
+} from "@/components/shared/NewsParts";
+import PhotoCarousel from "@/components/shared/PhotoCarousel";
 import { useLang } from "@/context/LanguageContext";
 import { newsUi } from "@/data/news";
-import { getVideos, storyHref, textDir } from "@/lib/news";
-import styles from "@/components/news-preview/StoryCinematic.module.css";
+import { getVideos, textDir } from "@/lib/news";
+import styles from "@/components/sections/NewsStory.module.css";
 
-export default function StoryCinematic({ item, related, basePath, listPath }) {
+// Story page: photo header, article with an "at a glance" sidebar, videos, photo carousel
+export default function NewsStory({ item, related }) {
   const { lang } = useLang();
   const t = newsUi[lang];
   const dir = textDir(lang);
@@ -42,7 +43,7 @@ export default function StoryCinematic({ item, related, basePath, listPath }) {
           style={cover.focus ? { objectPosition: cover.focus } : undefined}
         />
         <div className={clsx("container", styles.heroInner)}>
-          <Link className={styles.back} href={listPath}>
+          <Link className={styles.back} href="/news">
             <Icon className={styles.backIcon} name="arrowRight" size={16} />
             {t.allNews}
           </Link>
@@ -107,9 +108,9 @@ export default function StoryCinematic({ item, related, basePath, listPath }) {
 
       {photoCount > 0 && (
         <section className="section">
-          <div className="container">
+          <div className={clsx("container", styles.galleryWrap)}>
             <h2 className={clsx("section-title", styles.sectionTitle)}>{t.photos}</h2>
-            <MediaGallery images={item.gallery} labels={t} layout="mosaic" />
+            <PhotoCarousel images={item.gallery} labels={t} />
           </div>
         </section>
       )}
@@ -119,7 +120,7 @@ export default function StoryCinematic({ item, related, basePath, listPath }) {
           <h2 className={clsx("section-title", styles.sectionTitle)}>{t.moreNews}</h2>
           <div className={styles.relatedGrid}>
             {related.map((other) => (
-              <NewsCard headingLevel={3} href={storyHref(basePath, other.slug)} item={other} key={other.slug} />
+              <NewsCard headingLevel={3} item={other} key={other.slug} />
             ))}
           </div>
         </div>
