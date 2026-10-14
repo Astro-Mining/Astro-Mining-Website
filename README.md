@@ -55,6 +55,8 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Stage 1 content has been refined using the client-approved About, Services, and Contact copy.
 - Styling avoids Tailwind and Bootstrap per project rules.
 - Animations focus on subtle fade-up and staggered reveal patterns.
+- The canonical site URL lives in `lib/site.js` (the live site is served from `www`; the bare domain redirects there). Metadata, sitemap, robots.txt, and structured data all read it.
+- Site icons use the App Router file conventions in `app/`: `favicon.ico` (16/32/48px), `icon.png` (512px), and `apple-icon.png` (180px), cut from the logo mark on white so Google can show it next to search results. The homepage also emits Organization/WebSite structured data with the company logo.
 
 ## Adding News
 

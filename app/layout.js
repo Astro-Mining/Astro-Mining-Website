@@ -5,6 +5,7 @@ import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import LatestNewsPopup from "@/components/sections/LatestNewsPopup";
 import { navigation, contactDetails } from "@/data/siteContent";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const bodyFont = Gantari({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ const arabicFont = Cairo({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://astromining-industrial.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Astro Mining & Industrial",
     template: "%s | Astro Mining & Industrial"
@@ -51,8 +52,8 @@ export const metadata = {
     title: "Astro Mining & Industrial",
     description:
       "High-quality industrial minerals, export-ready production, and dependable supply from Egypt to global markets.",
-    url: "https://astromining-industrial.com",
-    siteName: "Astro Mining & Industrial",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "en_US",
     type: "website"
   },

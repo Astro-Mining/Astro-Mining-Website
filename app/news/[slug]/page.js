@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import NewsStory from "@/components/sections/NewsStory";
 import { getNewsItem, newsItems } from "@/data/news";
-
-const SITE_URL = "https://astromining-industrial.com";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -42,7 +41,7 @@ export default async function NewsStoryPage({ params }) {
     image: [`${SITE_URL}${item.cover.src}`],
     datePublished: item.date,
     inLanguage: ["en", "ar"],
-    publisher: { "@type": "Organization", name: "Astro Mining & Industrial", url: SITE_URL }
+    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL }
   };
 
   return (
