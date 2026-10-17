@@ -65,9 +65,15 @@ Next.js rebuild of the Astro Mining & Industrial homepage using the supplied pre
 - Photos: high-quality JPEG, max 2000px on the long edge (PNG exports are converted).
 - Videos: H.264 MP4 with `+faststart` so they play in every browser and start streaming immediately, plus a JPEG poster frame. Keep every file under GitHub's 100 MB limit (the 10-minute Al Nahar segment was two-pass encoded to ~95 MB).
 
+## Search Engines
+
+- Google: verify the site in Google Search Console, submit `https://www.astromining-industrial.com/sitemap.xml`, and use URL Inspection → Request indexing after big changes.
+- Bing (also feeds DuckDuckGo, Yahoo, Ecosia): the site supports IndexNow. The key file is `public/0e28ce84682b042b6320b6f67a34b490.txt`; after a deploy run `npm run indexnow` to submit every sitemap URL. Bing Webmaster Tools can also import the site from Google Search Console.
+
 ## Scripts
 
 - `npm run dev`
 - `npm run build`
 - `npm run start`
 - `npm run lint`
+- `npm run indexnow` (notify Bing/IndexNow engines of all sitemap URLs; run after deploys)
